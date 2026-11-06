@@ -26,8 +26,8 @@ const tiles = [
 ];
 // PLACEHOLDER reviews (invented quotes): replace with real buyer messages before launch.
 const reviews = [
-  { text: "“L’box wslatni f 2 iyam, mbakiya mzyan. Merci Ponpo!”", img: "/assets/review-1.jpg", item: "Booster box · Casablanca" },
-  { text: "“L’carta kima f tsswira bdebt. Ghadi n3awd nchri.”", img: "/assets/review-2.jpg", item: "Rare single · Tanger" },
+  { text: "“L’box wslatni f 2 iyam, mbakiya mzyan. Merci Ponpo!”", name: "Amine", img: "/assets/review-1.jpg", item: "Booster box · Casablanca" },
+  { text: "“L’carta kima f tsswira bdebt. Ghadi n3awd nchri.”", name: "Ali", img: "/assets/review-2.jpg", item: "Rare single · Tanger" },
 ];
 const v = (o: Record<string, string | number>) => o as CSSProperties;
 
@@ -123,7 +123,7 @@ export default function Home() {
           {reviews.map((r) => (
             <figure key={r.text} className="fb-card" style={{ margin: 0 }}>
                             <blockquote className="s20" style={{ margin: 0 }}>{r.text}</blockquote>
-              <figcaption className="who"><img className="av" src={r.img} alt="" /><span style={{ display: "flex", flexDirection: "column" }}><span className="s14 med">Buyer</span><span className="mono s12 muted">{r.item}</span></span></figcaption>
+              <figcaption className="who"><img className="av" src={r.img} alt="" /><span style={{ display: "flex", flexDirection: "column" }}><span className="s14 med">{r.name}</span><span className="mono s12 muted">{r.item}</span></span></figcaption>
             </figure>
           ))}
           <div className="fb-cta">
