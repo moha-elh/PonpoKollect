@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ponpo Kollect — Shop</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&amp;family=Chivo:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E1714}a:hover{color:#A9471A}
+.head{display:flex;flex-direction:column;gap:8px;padding:32px 0 20px}
+.bar{position:sticky;top:64px;z-index:10;background:#FFFFFF;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 0;border-block:1px solid #ECE7E3;margin-bottom:24px}
+.filters{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;max-width:100%}
+.chip{flex:none;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #DDD5CF;background:#FFFFFF;color:#1E1714;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:background-color .2s,border-color .2s,color .2s}
+.chip:hover{border-color:#1E1714}
+.chip.on{background:#1E1714;border-color:#1E1714;color:#FFFFFF}
+.chip .ct{font-family:'Instrument Sans',sans-serif;font-size:12px;opacity:.75}
+.sort{display:flex;align-items:center;gap:8px;font-size:14px}
+.sort select{appearance:none;min-height:40px;border:1px solid #DDD5CF;border-radius:999px;padding:0 16px;background:#FFFFFF;font-size:14px;color:#1E1714}
+.empty{display:grid;gap:24px;align-items:center;justify-items:center;text-align:center;padding:48px 16px 112px;max-width:560px;margin:0 auto}
+.empty img{width:200px;height:auto;animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-3deg)}}
+@media (max-width:1023px){ .bar{top:108px} }
+</style>
+</helmet>
+<div class="page">
+
+<div class="announce">Pay on delivery · Delivered across Morocco in 2–3 days</div>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <nav class="left" aria-label="Main">
+      <a class="nl on" href="Shop.dc.html">Shop all</a>
+      <a class="nl" href="Shop.dc.html">Singles</a>
+      <a class="nl" href="Shop.dc.html">Booster boxes</a>
+      <a class="nl" href="About.dc.html">About</a>
+      <a class="nl" href="HowToOrder.dc.html">How to order</a>
+    </nav>
+    <a class="logo" href="Main.dc.html" aria-label="Ponpo Kollect home"><img src="../assets/logo.webp" alt="Ponpo Kollect"></a>
+    <div class="right"><a class="btn btn-ink btn-sm" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener">Order on Instagram</a></div>
+  </div>
+  <nav class="subnav" aria-label="Main (mobile)">
+    <a href="Main.dc.html">Home</a><a class="on" href="Shop.dc.html">Shop all</a><a href="Shop.dc.html">Singles</a><a href="Shop.dc.html">Booster boxes</a><a href="About.dc.html">About</a><a href="HowToOrder.dc.html">How to order</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="head">
+    <h1 class="h1 fade-in">{{heading}}</h1>
+    <p class="lede fade-in" style="--d:.08s">Handpicked abroad and customs cleared. Pay on delivery anywhere in Morocco.</p>
+  </div>
+
+  <div class="bar">
+    <div class="filters" role="group" aria-label="Filter by category">
+      <sc-for list="{{filters}}" as="f" hint-placeholder-count="7">
+        <button class="{{f.cls}}" type="button" aria-pressed="{{f.pressed}}" onClick="{{f.pick}}">{{f.label}} <span class="ct">{{f.count}}</span></button>
+      </sc-for>
+    </div>
+    <label class="sort"><span class="muted">Sort</span>
+      <select value="{{sort}}" onChange="{{onSort}}">
+        <option value="featured">Featured</option>
+        <option value="low">Price, low to high</option>
+        <option value="high">Price, high to low</option>
+      </select>
+    </label>
+  </div>
+
+  <sc-if value="{{hasItems}}" hint-placeholder-val="{{ true }}">
+    <div class="{{gridCls}}" style="padding-bottom:96px">
+      <sc-for list="{{items}}" as="p" hint-placeholder-count="8">
+        <div class="{{p.cardCls}}">
+          <div class="kimg">
+            <a class="kfill" href="Product.dc.html" aria-label="{{p.name}}">
+              <sc-if value="{{p.card}}" hint-placeholder-val="{{ false }}"><span class="va"><span class="foil-wrap"><span class="foil"><img src="{{p.img}}" alt="{{p.name}}"></span></span></span></sc-if>
+              <sc-if value="{{p.notCard}}" hint-placeholder-val="{{ true }}"><span class="va"><img src="{{p.img}}" alt="{{p.name}}"></span></sc-if>
+              <sc-if value="{{p.hasAlt}}" hint-placeholder-val="{{ false }}"><span class="vb"><img src="{{p.img2}}" alt=""></span></sc-if>
+            </a>
+            <span class="badges"><sc-if value="{{p.hasWas}}" hint-placeholder-val="{{ false }}"><span class="tag sale">{{p.pct}}</span></sc-if></span>
+            <a class="qa" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{p.order}}"><span>Quick order</span><span class="mono">via DM</span></a>
+          </div>
+          <div class="kmeta">
+            <a class="nm trunc" href="Product.dc.html" title="{{p.name}}">{{p.name}}</a>
+            <span class="sub trunc">{{p.sub}}</span>
+            <span class="price"><span class="{{p.nowCls}}">{{p.priceStr}}</span><sc-if value="{{p.hasWas}}" hint-placeholder-val="{{ false }}"><s>{{p.wasStr}}</s></sc-if></span>
+          </div>
+          <a class="qb" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{p.order}}">Order on Instagram</a>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{isEmpty}}" hint-placeholder-val="{{ false }}">
+    <section class="empty" aria-live="polite">
+      <img src="../assets/ponpoko-sticker.webp" alt="Ponpoko sticker holding a heart">
+      <h2 class="h2">{{emptyTitle}}</h2>
+      <p class="lede">{{emptyBody}}</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a class="btn btn-ink" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{askCategory}}">Ask Ponpoko</a>
+        <button class="btn btn-line" type="button" onClick="{{showAll}}">Shop everything</button>
+      </div>
+    </section>
+  </sc-if>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:340px">
+        <span class="flogo"><img src="../assets/logo.webp" alt="Ponpo Kollect"></span>
+        <p class="s14" style="margin:0;color:#BEB2AB">Products from Ponpoko’s Vault. Pay on delivery, anywhere in Morocco.</p>
+      </div>
+      <div><h3>Shop</h3><ul><li><a href="Shop.dc.html">Booster boxes</a></li><li><a href="Shop.dc.html">Rare singles</a></li><li><a href="Shop.dc.html">Decks</a></li><li><a href="Shop.dc.html">Boosters</a></li></ul></div>
+      <div><h3>Help</h3><ul><li><a href="HowToOrder.dc.html">How to order</a></li><li><a href="https://ponpokollect.ma/pages/shipping-delivery" target="_blank" rel="noopener">Shipping &amp; delivery</a></li><li><a href="https://ponpokollect.ma/pages/return-policy" target="_blank" rel="noopener">Return policy</a></li><li><a href="https://ponpokollect.ma/pages/faq" target="_blank" rel="noopener">FAQ</a></li></ul></div>
+      <div><h3>Ponpo</h3><ul><li><a href="About.dc.html">About</a></li><li><a href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://ponpokollect.ma/pages/terms-and-conditions" target="_blank" rel="noopener">Terms</a></li><li><a href="https://ponpokollect.ma/pages/confidentiality" target="_blank" rel="noopener">Privacy</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Ponpo Kollect</span><span>Ponpo Kollect is an independent shop and is not affiliated with, endorsed or sponsored by Konami or Yu-Gi-Oh!.</span></div>
+  </div>
+</footer>
+
+<sc-if value="{{copied}}" hint-placeholder-val="{{ false }}">
+  <div class="toast" role="status"><b>Message copied, paste it in the DM</b><q>{{copiedText}}</q></div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"hoverStyle":{"editor":"enum","options":["A · strip in photo","B · button below"],"default":"A · strip in photo","section":"Product cards"},"$preview":{"width":1440,"height":2400}}'>
+class Component extends DCLogic {
+  copy(text) {
+    try { if (navigator.clipboard) navigator.clipboard.writeText(text); } catch (e) {}
+    this.setState({ copiedText: text });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copiedText: null }), 5000);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+  catalog() {
+    const B = '/_blob/';
+    return [
+      { id: 'lob25', name: 'Legend of Blue Eyes White Dragon “25th Anniversary” Booster Box', cat: 'boxes', sub: 'Booster box · 24 packs', img: B + '1cf148d453c220a513d1beb96b7d7b43', price: 2450, was: 2760 },
+      { id: 'ioc25', name: 'Invasion of Chaos “25th Anniversary” Booster Box', cat: 'boxes', sub: 'Booster box · 24 packs', img: B + 'bfd27411299fb05bfa8f89d95dc49adb', price: 1800, was: 2040 },
+      { id: 'ps25', name: 'Pharaoh’s Servant “25th Anniversary” Booster Box', cat: 'boxes', sub: 'Booster box · 24 packs', img: B + '3bea715c214a5d622ca27b896c7340d7', price: 1800, was: 2040 },
+      { id: 'srl25', name: 'Spell Ruler “25th Anniversary” Booster Box', cat: 'boxes', sub: 'Booster box · 24 packs', img: B + '0a70c2b0209c605f8651023a27e7a872', price: 1800, was: 2040 },
+      { id: 'shaddoll', name: 'Shaddoll Ready “Core Deck”', cat: 'decks', sub: 'Ready deck bundle', img: B + '79b8729bbb3725898c44e033de47dfb8', img2: B + 'da9d665f4c77afd912cb0447194677d8', price: 800 },
+      { id: 'bewd', name: 'Blue-Eyes White Destiny Structure Deck', cat: 'decks', sub: 'Structure deck', img: B + '3b5b2ae52dd1159f8a8a3223ac978031', price: 250 },
+      { id: 'inf', name: 'The Infinite Forbidden Booster Pack', cat: 'boosters', sub: 'Booster pack', img: B + '8b0f4d4164ba9cd246f5423a2e88a21d', price: 85 },
+      { id: 'merchant', name: 'Magical Merchant — Champion Pack 5 (CP05)', cat: 'singles', card: true, sub: 'Super Rare · English · Unlimited', img: B + '0fed9e1d0f81eb50554d7de81b7a6f10', price: 1400 },
+      { id: 'bane', name: 'Evil Hero Malicious Bane (GLAS)', cat: 'singles', card: true, sub: 'Ultimate Rare · English · Unlimited', img: B + 'eebad67326d5f38421abd3192b481f32', price: 780 },
+      { id: 'majestic', name: 'Majestic Star Dragon (SOVR)', cat: 'singles', card: true, sub: 'Ghost Rare · English · Unlimited', img: B + 'ece800265378505cf99a63f1dca3146e', price: 650 },
+      { id: 'beud', name: 'Blue-Eyes Ultimate Dragon — Retro Pack 1 (RP01)', cat: 'singles', card: true, sub: 'Secret Rare · French · Limited Edition', img: B + 'd5e4ec2f8fc557215f2c973d887f352b', price: 500 },
+      { id: 'zaloog', name: 'Don Zaloog — Pharaonic Guardian (PGD)', cat: 'singles', card: true, sub: '1st Edition', img: B + '52213bbcb6a9fd4fabe8d7fd368d1fb7', price: 450 },
+      { id: 'bls', name: 'Black Luster Soldier — Envoy of the Beginning (IOC-FR)', cat: 'singles', card: true, sub: 'Ultra Rare · French · Unlimited', img: B + '2075d60d418eb578ae5a3b37d4cfdec6', price: 400 }
+    ];
+  }
+  renderVals() {
+    const s = this.state || {};
+    const cat = s.cat || 'all';
+    const sort = s.sort || 'featured';
+    const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' MAD';
+    const deco = p => ({
+      ...p, notCard: !p.card, hasAlt: !!p.img2, img2: p.img2 || p.img,
+      cardCls: 'kcard reveal' + (p.img2 ? ' alt' : ''),
+      priceStr: fmt(p.price), wasStr: p.was ? fmt(p.was) : '', hasWas: !!p.was,
+      pct: p.was ? '−' + Math.round((1 - p.price / p.was) * 100) + '%' : '', nowCls: p.was ? 'now sale' : 'now',
+      order: () => this.copy('Hi Ponpo! I’d like to order: ' + p.name + ' (' + fmt(p.price) + ').')
+    });
+    const all = this.catalog().map(deco);
+    const cats = [
+      { id: 'all', label: 'All' }, { id: 'boxes', label: 'Booster boxes' }, { id: 'singles', label: 'Rare singles' },
+      { id: 'decks', label: 'Decks' }, { id: 'boosters', label: 'Boosters' }, { id: 'accessories', label: 'Accessories' }, { id: 'collector', label: 'Collector boxes' }
+    ];
+    let visible = all.filter(p => cat === 'all' || p.cat === cat);
+    if (sort === 'low') visible = visible.slice().sort((a, b) => a.price - b.price);
+    if (sort === 'high') visible = visible.slice().sort((a, b) => b.price - a.price);
+    const empties = {
+      accessories: { t: 'Accessories are restocking', b: 'Sleeves, deck boxes and playmats come back after Ponpoko’s next trip. Tell her what you need and she’ll look for it.', m: 'Hi Ponpo! I’m looking for accessories: ' },
+      collector: { t: 'No collector boxes right now', b: 'Collector boxes sell out fast. Ask in the DMs and Ponpoko will tell you what she’s bringing back next.', m: 'Hi Ponpo! Are any collector boxes coming? ' }
+    };
+    const e = empties[cat] || empties.accessories;
+    const label = (cats.find(c => c.id === cat) || cats[0]).label;
+    const hv = String(this.props.hoverStyle ?? 'A · strip in photo').startsWith('B') ? 'hv-b' : 'hv-a';
+    return {
+      gridCls: 'grid ' + hv,
+      heading: cat === 'all' ? 'Shop all' : label,
+      filters: cats.map(c => ({ label: c.label, count: c.id === 'all' ? all.length : all.filter(p => p.cat === c.id).length, pressed: cat === c.id ? 'true' : 'false', cls: cat === c.id ? 'chip on' : 'chip', pick: () => this.setState({ cat: c.id }) })),
+      sort, onSort: (ev) => this.setState({ sort: ev.target.value }),
+      items: visible, hasItems: visible.length > 0, isEmpty: visible.length === 0,
+      emptyTitle: e.t, emptyBody: e.b,
+      askCategory: () => this.copy(e.m),
+      showAll: () => this.setState({ cat: 'all' }),
+      copied: !!s.copiedText, copiedText: s.copiedText || ''
+    };
+  }
+}
+</script>
+</body>
+</html>

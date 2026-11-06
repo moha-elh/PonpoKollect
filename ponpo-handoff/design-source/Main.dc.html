@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ponpo Kollect — Home</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&amp;family=Chivo:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E1714}a:hover{color:#A9471A}
+.hero{position:relative;background:#FEC604;overflow:hidden}
+.hero-media{position:relative;aspect-ratio:4/3}
+.hero-img{display:block;width:100%;height:100%;object-fit:cover;object-position:80% 40%}
+.hp{position:absolute;display:block;rotate:var(--r,0deg);transition:transform .5s cubic-bezier(.2,.8,.2,1);z-index:1}
+.hp:hover{transform:translateY(-6px);z-index:3}
+.mk-lob .pat{-webkit-mask:url(../assets/lob25.webp) 0 0/100% 100% no-repeat,repeating-radial-gradient(circle at 50% 50%,#000 0 4px,transparent 4px 11px),repeating-conic-gradient(from 0deg at 50% 50%,#000 0 3deg,transparent 3deg 6deg);-webkit-mask-composite:source-in,source-in;mask-composite:intersect,intersect}
+.mk-lob .glare{-webkit-mask:url(../assets/lob25.webp) 0 0/100% 100% no-repeat;mask:url(../assets/lob25.webp) 0 0/100% 100% no-repeat}
+.qb{left:64%;bottom:3%;width:32%}
+.q1{left:4%;bottom:8%;width:15%}
+.q3{left:5%;top:7%;width:12%}
+.q2,.q4,.q5{display:none}
+.hl{color:#905484}
+.avp{width:48px;height:48px;object-fit:contain;background:#F6F3F0;border-radius:12px;padding:4px;flex:none}
+.fb-card.real .av{width:48px;height:48px;box-shadow:0 0 0 2px #1E1714,0 0 0 4px #F08448}
+.hero-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:20px;padding:32px 16px 48px}
+.facts li{background:rgba(255,255,255,.75);padding:6px 12px;border-radius:999px}
+.hero-copy .lede{color:#3B2A22;max-width:27em}
+.facts{display:flex;flex-wrap:wrap;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:12px;color:#1E1714;margin:0;padding:0;list-style:none}
+.sec{padding:64px 0}
+.cats{display:grid;gap:8px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.cat{position:relative;display:block;aspect-ratio:3/4;background:#F6F3F0;overflow:hidden;text-decoration:none;color:#1E1714}
+.cat .im{position:absolute;inset:12% 14% 28%;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.cat .im img{width:100%;height:100%;object-fit:contain}
+.cat:hover .im{transform:scale(1.06) translateY(-4px)}
+.cat .lb{position:absolute;left:16px;right:16px;bottom:14px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.cat .lb b{font-size:20px;font-weight:500;letter-spacing:-0.01em}
+.why{background:#F6F3F0;padding:64px 0}
+.why-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.why-item{display:flex;gap:20px;align-items:flex-start;min-width:0}
+.why-item div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.row{display:grid;gap:32px 16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.single{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:#1E1714;min-width:0}
+
+.fb-card .sample{align-self:flex-start;font-size:12px;font-weight:500;color:#A9471A;border:1px dashed #E3B79E;border-radius:999px;padding:2px 10px}
+.fb{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+.fb-card{border:1.5px dashed #D9CFC8;border-radius:20px 20px 20px 6px;padding:24px;display:flex;flex-direction:column;gap:16px;min-height:200px;justify-content:space-between}
+.fb-card .who{display:flex;align-items:center;gap:12px}
+.fb-card .av{width:40px;height:40px;border-radius:50%;background:#F6F3F0;display:grid;place-items:center;font-family:'Instrument Sans',sans-serif;font-size:12px;color:#6E625C;flex:none}
+.fb-card.real{border:0;background:#1E1714;color:#F3EEE9}
+.fb-card.real .av{background:#F08448;color:#1E1714}
+.fb-card.real .muted{color:#BEB2AB}
+.meet{background:#FEC604;overflow:hidden}
+.meet-in{display:grid;gap:8px;align-items:end;padding-top:48px}
+.meet .stk{width:240px;justify-self:center;display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1);transform-origin:50% 100%}
+.meet:hover .stk{transform:translateY(-6px) rotate(-3deg)}
+.meet .copy{display:flex;flex-direction:column;gap:20px;padding:24px 0 56px}
+.meet .mstats{display:flex;flex-wrap:wrap;gap:24px 40px;margin:0;padding:0;list-style:none}
+.meet .mstats li{display:flex;flex-direction:column}
+.meet .mstats b{font-family:'Chivo',sans-serif;font-weight:500;font-size:32px;letter-spacing:-0.02em;line-height:1.1}
+.fb-cta{background:#FEC604;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px;justify-content:space-between;position:relative;overflow:hidden;min-height:200px}
+.fb-cta img{position:absolute;right:-8px;bottom:-8px;width:120px}
+
+@media (min-width:768px){
+  .cats{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .why-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 64px}
+  .sec{padding:96px 0}
+  .why{padding:96px 0}
+  .row{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .fb{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:1024px){
+  .hero{min-height:720px}
+  .hero-media{position:absolute;inset:0;aspect-ratio:auto}
+  .qb{left:75%;bottom:2%;width:18%}
+  .q1{left:3%;top:5%;width:6.5%}
+  .q2{display:block;left:30%;bottom:3%;width:6.5%}
+  .q3{left:46%;top:9%;width:8%}
+  .q4{display:block;left:53%;bottom:7%;width:8%}
+  .q5{display:block;left:90%;top:7%;width:6.5%}
+  .hero-copy{padding:0 32px;max-width:1320px;margin:0 auto;min-height:720px;justify-content:center}
+  .hero-copy > *{max-width:560px}
+  .why-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}
+  .why-item{flex-direction:column}
+  .fb{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .row{grid-template-columns:repeat(6,minmax(0,1fr));gap:24px}
+  .meet-in{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;padding-top:64px}
+  .meet .stk{width:340px}
+  .meet .copy{padding:64px 0 80px}
+}
+</style>
+</helmet>
+<div class="page">
+
+<div class="announce">Pay on delivery · Delivered across Morocco in 2–3 days</div>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <nav class="left" aria-label="Main">
+      <a class="nl" href="Shop.dc.html">Shop all</a>
+      <a class="nl" href="Shop.dc.html">Singles</a>
+      <a class="nl" href="Shop.dc.html">Booster boxes</a>
+      <a class="nl" href="About.dc.html">About</a>
+      <a class="nl" href="HowToOrder.dc.html">How to order</a>
+    </nav>
+    <a class="logo" href="Main.dc.html" aria-label="Ponpo Kollect home"><img src="../assets/logo.webp" alt="Ponpo Kollect"></a>
+    <div class="right"><a class="btn btn-ink btn-sm" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{orderGeneral}}">Order on Instagram</a></div>
+  </div>
+  <nav class="subnav" aria-label="Main (mobile)">
+    <a class="on" href="Main.dc.html">Home</a><a href="Shop.dc.html">Shop all</a><a href="Shop.dc.html">Singles</a><a href="Shop.dc.html">Booster boxes</a><a href="About.dc.html">About</a><a href="HowToOrder.dc.html">How to order</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" aria-label="Welcome">
+  <div class="hero-media">
+    <img class="hero-img fade-in" src="{{heroImage}}" alt="Ponpoko, the raccoon behind Ponpo Kollect">
+    <sc-for list="{{heroProps}}" as="h" hint-placeholder-count="6">
+      <a class="{{h.aCls}}" href="Product.dc.html" aria-label="{{h.label}}" style="--r:{{h.r}};--d:{{h.d}}">
+        <span class="bob" style="--bd:{{h.bd}}">
+          <span class="{{h.hcls}}" style="{{h.hstyle}}" onMouseMove="{{h.move}}" onMouseLeave="{{h.leave}}">
+            <span class="rot"><span class="face"><img src="{{h.img}}" alt=""><span class="pat"></span><span class="glare"></span><span class="edge"></span></span></span>
+          </span>
+        </span>
+      </a>
+    </sc-for>
+  </div>
+  <div class="hero-copy">
+    <h1 class="h1 fade-in" style="--d:.08s"><span class="hl">Rare cards,</span><br><span class="hl">sealed boxes,</span><br>handpicked abroad.</h1>
+    <p class="lede fade-in" style="--d:.16s">Every product is picked by Ponpoko on her travels and cleared through customs, to bring Yu-Gi-Oh! a little closer to the community in Morocco.</p>
+    <div class="fade-in" style="--d:.24s;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-ink" href="Shop.dc.html">Shop the vault</a>
+      <a class="btn btn-line" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{orderGeneral}}">Order on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" aria-labelledby="cat-h">
+  <div class="shead"><h2 class="h2" id="cat-h">Shop the vault</h2><a class="ulink" href="Shop.dc.html">Shop all</a></div>
+  <div class="cats reveal">
+    <a class="cat" href="Shop.dc.html"><span class="im"><img src="../assets/lob25.webp" alt=""></span><span class="lb"><b>Booster boxes</b><span class="mono s12">4</span></span></a>
+    <a class="cat" href="Shop.dc.html"><span class="im"><img src="../assets/majestic.webp" alt=""></span><span class="lb"><b>Rare singles</b><span class="mono s12">6</span></span></a>
+    <a class="cat" href="Shop.dc.html"><span class="im"><img src="../assets/bewd.webp" alt=""></span><span class="lb"><b>Decks</b><span class="mono s12">2</span></span></a>
+    <a class="cat" href="Shop.dc.html"><span class="im"><img src="../assets/inf.webp" alt=""></span><span class="lb"><b>Boosters</b><span class="mono s12">1</span></span></a>
+  </div>
+</section>
+
+<section class="wrap sec" aria-labelledby="new-h" style="padding-top:0">
+  <div class="shead"><h2 class="h2" id="new-h">New in the vault</h2><a class="ulink" href="Shop.dc.html">View all 13</a></div>
+  <div class="{{gridCls}}">
+    <sc-for list="{{fresh}}" as="p" hint-placeholder-count="8">
+      <div class="{{p.cardCls}}">
+        <div class="kimg">
+          <a class="kfill" href="Product.dc.html" aria-label="{{p.name}}">
+            <sc-if value="{{p.card}}" hint-placeholder-val="{{ false }}"><span class="va"><span class="foil-wrap"><span class="foil"><img src="{{p.img}}" alt="{{p.name}}"></span></span></span></sc-if>
+            <sc-if value="{{p.notCard}}" hint-placeholder-val="{{ true }}"><span class="va"><img src="{{p.img}}" alt="{{p.name}}"></span></sc-if>
+            <sc-if value="{{p.hasAlt}}" hint-placeholder-val="{{ false }}"><span class="vb"><img src="{{p.img2}}" alt=""></span></sc-if>
+          </a>
+          <span class="badges"><sc-if value="{{p.hasWas}}" hint-placeholder-val="{{ false }}"><span class="tag sale">{{p.pct}}</span></sc-if></span>
+          <a class="qa" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{p.order}}"><span>Quick order</span><span class="mono">via DM</span></a>
+        </div>
+        <div class="kmeta">
+          <a class="nm trunc" href="Product.dc.html" title="{{p.name}}">{{p.name}}</a>
+          <span class="sub trunc">{{p.sub}}</span>
+          <span class="price"><span class="{{p.nowCls}}">{{p.priceStr}}</span><sc-if value="{{p.hasWas}}" hint-placeholder-val="{{ false }}"><s>{{p.wasStr}}</s></sc-if></span>
+        </div>
+        <a class="qb" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{p.order}}">Order on Instagram</a>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section class="why" aria-label="Why order from Ponpo">
+  <div class="wrap why-grid reveal">
+    <div class="why-item">
+      <span class="burst" style="--bc:#FEC604"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M168,128a40,40,0,1,1-40-40A40,40,0,0,1,168,128Zm80-64V192a8,8,0,0,1-8,8H16a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H240A8,8,0,0,1,248,64Zm-16,46.35A56.78,56.78,0,0,1,193.65,72H62.35A56.78,56.78,0,0,1,24,110.35v35.3A56.78,56.78,0,0,1,62.35,184h131.3A56.78,56.78,0,0,1,232,145.65Z"/></svg></span>
+      <div><span class="h3">Pay on delivery</span><span class="s14 muted">Cash when the parcel reaches you. Nothing to pay up front, no card needed.</span></div>
+    </div>
+    <div class="why-item">
+      <span class="burst" style="--bc:#F08448"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M255.43,117l-14-35A15.93,15.93,0,0,0,226.58,72H192V64a8,8,0,0,0-8-8H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H49a32,32,0,0,0,62,0h50a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V120A8.13,8.13,0,0,0,255.43,117ZM80,208a16,16,0,1,1,16-16A16,16,0,0,1,80,208ZM32,136V72H176v64Zm160,72a16,16,0,1,1,16-16A16,16,0,0,1,192,208Zm0-96V88h34.58l9.6,24Z"/></svg></span>
+      <div><span class="h3">2–3 day delivery</span><span class="s14 muted">Shipped with Cathedis to the city, district or address you agree on.</span></div>
+    </div>
+    <div class="why-item">
+      <span class="burst" style="--bc:#E7C9DF"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M215.52,197.26a8,8,0,0,1-1.86,8.39l-24,24A8,8,0,0,1,184,232a7.09,7.09,0,0,1-.79,0,8,8,0,0,1-5.87-3.52l-44.07-66.12L112,183.59V208a8,8,0,0,1-2.34,5.65s-14,14.06-15.88,15.88A7.91,7.91,0,0,1,91,231.41a8,8,0,0,1-10.41-4.35l-.06-.15-14.7-36.76L29,175.42a8,8,0,0,1-2.69-13.08l16-16A8,8,0,0,1,48,144H72.4l21.27-21.27L27.56,78.65a8,8,0,0,1-1.22-12.32l24-24a8,8,0,0,1,8.39-1.86l85.94,31.25L176.2,40.19a28,28,0,0,1,39.6,39.6l-31.53,31.53Z"/></svg></span>
+      <div><span class="h3">Handpicked abroad</span><span class="s14 muted">Not a wholesaler. Ponpoko brings every product back from her own trips.</span></div>
+    </div>
+    <div class="why-item">
+      <span class="burst" style="--bc:#FFFFFF"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm-34.32,69.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></svg></span>
+      <div><span class="h3">Customs cleared</span><span class="s14 muted">Every product has gone through customs clearance before it’s sold.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" aria-labelledby="reel-h">
+  <div class="shead">
+    <div style="display:flex;flex-direction:column;gap:8px"><h2 class="h2" id="reel-h">Watch the pulls</h2><p class="lede">Unboxings, graded slabs and travel finds, straight from @ponpokollect.</p></div>
+    <a class="btn btn-line btn-sm" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener">Follow on Instagram</a>
+  </div>
+  <div class="carousel sides reveal">
+    <button class="carrow side l" type="button" aria-label="Previous videos" disabled="{{prevDis}}" onClick="{{prev}}"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z"/></svg></button>
+    <button class="carrow side r" type="button" aria-label="Next videos" disabled="{{nextDis}}" onClick="{{next}}"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"/></svg></button>
+    <div class="cviewport">
+      <div class="ctrack" style="--i:{{ri}}">
+        <sc-for list="{{reels}}" as="r" hint-placeholder-count="5">
+          <a class="reel" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener">
+            <span class="rimg"><img src="{{r.img}}" alt="{{r.title}}"><span class="burst sm"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></span></span>
+            <span class="s14 clamp2">{{r.title}}</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+    <div class="cdots" aria-hidden="true"><sc-for list="{{dots}}" as="d" hint-placeholder-count="3"><span class="{{d.cls}}"></span></sc-for></div>
+  </div>
+</section>
+
+<section class="wrap sec" aria-labelledby="sing-h" style="padding-top:0">
+  <div class="shead"><h2 class="h2" id="sing-h">Rare singles</h2><a class="ulink" href="Shop.dc.html">All singles</a></div>
+  <div class="row">
+    <sc-for list="{{singles}}" as="p" hint-placeholder-count="6">
+      <a class="single reveal" href="Product.dc.html">
+        <span class="{{p.hcls}}" style="{{p.hstyle}}" onMouseMove="{{p.move}}" onMouseLeave="{{p.leave}}"><span class="rot"><span class="face"><img src="{{p.img}}" alt="{{p.name}}"><span class="pat"></span><span class="glare"></span><span class="edge"></span></span></span></span>
+        <span class="tag" style="align-self:flex-start">{{p.rarity}}</span>
+        <span class="s14 clamp2" title="{{p.name}}">{{p.name}}</span>
+        <span class="price">{{p.priceStr}}</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<section class="wrap sec" aria-labelledby="fb-h" style="padding-top:0">
+  <div class="shead">
+    <div style="display:flex;flex-direction:column;gap:8px"><h2 class="h2" id="fb-h">Straight from the DMs</h2><p class="lede">What buyers say after their parcel arrives.</p></div>
+  </div>
+  <div class="fb reveal">
+    <a class="fb-card real" href="https://www.instagram.com/stories/highlights/17881132455395042/" target="_blank" rel="noopener" style="text-decoration:none">
+      <span class="tag" style="align-self:flex-start;background:#F08448">Shared in his story</span>
+      <span class="s20" style="color:#F3EEE9">ElGrandeToto ordered from Ponpo Kollect and posted it to his Instagram story.</span>
+      <span class="who"><span class="av">ET</span><span style="display:flex;flex-direction:column"><span class="s14 med">ElGrandeToto</span><span class="mono s12 muted">See the story highlight</span></span></span>
+    </a>
+    <sc-for list="{{reviews}}" as="r" hint-placeholder-count="2">
+      <figure class="fb-card" style="margin:0">
+        <span class="sample">Sample — swap for a real review</span>
+        <blockquote class="s20" style="margin:0">{{r.text}}</blockquote>
+        <figcaption class="who"><img class="avp" src="{{r.img}}" alt=""><span style="display:flex;flex-direction:column"><span class="s14 med">{{r.who}}</span><span class="mono s12 muted">{{r.item}}</span></span></figcaption>
+      </figure>
+    </sc-for>
+    <div class="fb-cta">
+      <span class="h3" style="max-width:12em">Got your order? Tell Ponpoko how it went.</span>
+      <a class="btn btn-ink btn-sm" style="align-self:flex-start;position:relative;z-index:1" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{feedback}}">Send feedback</a>
+      <img src="../assets/ponpoko-sticker.webp" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="meet" aria-labelledby="about-h">
+  <div class="wrap meet-in">
+    <img class="stk" src="../assets/ponpoko-sticker.webp" alt="Ponpoko sticker holding a heart">
+    <div class="copy reveal">
+      <span class="tag plum" style="align-self:flex-start">Who’s the raccoon?</span>
+      <h2 class="h2" id="about-h">The raccoon behind the vault.</h2>
+      <p class="lede" style="color:#3B2A22">A Moroccan Yu-Gi-Oh! enthusiast sharing her passion for the game and the anime. Whenever Ponpoko travels, she brings back new products. Ask for your favourites in the DMs.</p>
+      <ul class="mstats"><li><b>13.1K</b><span class="mono s12">followers</span></li><li><b>10K</b><span class="mono s12">giveaway thrown</span></li><li><b>13</b><span class="mono s12">products in stock</span></li></ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-ink" href="About.dc.html">Meet Ponpoko</a>
+        <a class="btn btn-line" style="background:transparent" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener">@ponpokollect</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:340px">
+        <span class="flogo"><img src="../assets/logo.webp" alt="Ponpo Kollect"></span>
+        <p class="s14" style="margin:0;color:#BEB2AB">Products from Ponpoko’s Vault. Pay on delivery, anywhere in Morocco.</p>
+      </div>
+      <div><h3>Shop</h3><ul><li><a href="Shop.dc.html">Booster boxes</a></li><li><a href="Shop.dc.html">Rare singles</a></li><li><a href="Shop.dc.html">Decks</a></li><li><a href="Shop.dc.html">Boosters</a></li></ul></div>
+      <div><h3>Help</h3><ul><li><a href="HowToOrder.dc.html">How to order</a></li><li><a href="https://ponpokollect.ma/pages/shipping-delivery" target="_blank" rel="noopener">Shipping &amp; delivery</a></li><li><a href="https://ponpokollect.ma/pages/return-policy" target="_blank" rel="noopener">Return policy</a></li><li><a href="https://ponpokollect.ma/pages/faq" target="_blank" rel="noopener">FAQ</a></li></ul></div>
+      <div><h3>Ponpo</h3><ul><li><a href="About.dc.html">About</a></li><li><a href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://ponpokollect.ma/pages/terms-and-conditions" target="_blank" rel="noopener">Terms</a></li><li><a href="https://ponpokollect.ma/pages/confidentiality" target="_blank" rel="noopener">Privacy</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Ponpo Kollect</span><span>Ponpo Kollect is an independent shop and is not affiliated with, endorsed or sponsored by Konami or Yu-Gi-Oh!.</span></div>
+  </div>
+</footer>
+
+<sc-if value="{{copied}}" hint-placeholder-val="{{ false }}">
+  <div class="toast" role="status"><b>Message copied, paste it in the DM</b><q>{{copiedText}}</q></div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"hoverStyle":{"editor":"enum","options":["A · strip in photo","B · button below"],"default":"A · strip in photo","section":"Product cards"},"heroImage":{"editor":"text","default":"../assets/hero.webp","section":"Hero"},"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  copy(text) {
+    try { if (navigator.clipboard) navigator.clipboard.writeText(text); } catch (e) {}
+    this.setState({ copiedText: text });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copiedText: null }), 5000);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+  catalog() {
+    const B = '/_blob/';
+    return [
+      { id: 'lob25', name: 'Legend of Blue Eyes White Dragon “25th Anniversary” Booster Box', cat: 'boxes', sub: 'Booster box · 24 packs', img: B + '1cf148d453c220a513d1beb96b7d7b43', price: 2450, was: 2760 },
+      { id: 'ioc25', name: 'Invasion of Chaos “25th Anniversary” Booster Box', cat: 'boxes', sub: 'Booster box · 24 packs', img: B + 'bfd27411299fb05bfa8f89d95dc49adb', price: 1800, was: 2040 },
+      { id: 'ps25', name: 'Pharaoh’s Servant “25th Anniversary” Booster Box', cat: 'boxes', sub: 'Booster box · 24 packs', img: B + '3bea715c214a5d622ca27b896c7340d7', price: 1800, was: 2040 },
+      { id: 'srl25', name: 'Spell Ruler “25th Anniversary” Booster Box', cat: 'boxes', sub: 'Booster box · 24 packs', img: B + '0a70c2b0209c605f8651023a27e7a872', price: 1800, was: 2040 },
+      { id: 'shaddoll', name: 'Shaddoll Ready “Core Deck”', cat: 'decks', sub: 'Ready deck bundle', img: B + '79b8729bbb3725898c44e033de47dfb8', img2: B + 'da9d665f4c77afd912cb0447194677d8', price: 800 },
+      { id: 'bewd', name: 'Blue-Eyes White Destiny Structure Deck', cat: 'decks', sub: 'Structure deck', img: B + '3b5b2ae52dd1159f8a8a3223ac978031', price: 250 },
+      { id: 'inf', name: 'The Infinite Forbidden Booster Pack', cat: 'boosters', sub: 'Booster pack', img: B + '8b0f4d4164ba9cd246f5423a2e88a21d', price: 85 },
+      { id: 'merchant', name: 'Magical Merchant — Champion Pack 5 (CP05)', cat: 'singles', card: true, rarity: 'Super Rare', sub: 'Super Rare · English · Unlimited', img: B + '0fed9e1d0f81eb50554d7de81b7a6f10', price: 1400 },
+      { id: 'bane', name: 'Evil Hero Malicious Bane (GLAS)', cat: 'singles', card: true, rarity: 'Ultimate Rare', sub: 'Ultimate Rare · English · Unlimited', img: B + 'eebad67326d5f38421abd3192b481f32', price: 780 },
+      { id: 'majestic', name: 'Majestic Star Dragon (SOVR)', cat: 'singles', card: true, rarity: 'Ghost Rare', sub: 'Ghost Rare · English · Unlimited', img: B + 'ece800265378505cf99a63f1dca3146e', price: 650 },
+      { id: 'beud', name: 'Blue-Eyes Ultimate Dragon — Retro Pack 1 (RP01)', cat: 'singles', card: true, rarity: 'Secret Rare', sub: 'Secret Rare · French · Limited Edition', img: B + 'd5e4ec2f8fc557215f2c973d887f352b', price: 500 },
+      { id: 'zaloog', name: 'Don Zaloog — Pharaonic Guardian (PGD)', cat: 'singles', card: true, rarity: '1st Edition', sub: '1st Edition', img: B + '52213bbcb6a9fd4fabe8d7fd368d1fb7', price: 450 },
+      { id: 'bls', name: 'Black Luster Soldier — Envoy of the Beginning (IOC-FR)', cat: 'singles', card: true, rarity: 'Ultra Rare', sub: 'Ultra Rare · French · Unlimited', img: B + '2075d60d418eb578ae5a3b37d4cfdec6', price: 400 }
+    ];
+  }
+  renderVals() {
+    const s = this.state || {};
+    const hv = String(this.props.hoverStyle ?? 'A · strip in photo').startsWith('B') ? 'hv-b' : 'hv-a';
+    const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' MAD';
+    const deco = p => ({
+      ...p, notCard: !p.card, hasAlt: !!p.img2, img2: p.img2 || p.img,
+      cardCls: 'kcard reveal' + (p.img2 ? ' alt' : ''),
+      priceStr: fmt(p.price), wasStr: p.was ? fmt(p.was) : '', hasWas: !!p.was,
+      pct: p.was ? '−' + Math.round((1 - p.price / p.was) * 100) + '%' : '', nowCls: p.was ? 'now sale' : 'now',
+      order: () => this.copy('Hi Ponpo! I’d like to order: ' + p.name + ' (' + fmt(p.price) + ').')
+    });
+    const all = this.catalog().map(deco);
+    const pick = ['lob25', 'majestic', 'shaddoll', 'ioc25', 'bane', 'bewd', 'ps25', 'inf'];
+    const B = '/_blob/';
+    const ri = s.ri || 0, maxI = 2;
+    const H = s.hc || {};
+    const hc = (id, i) => {
+      const h = H[id];
+      const base = '--dd:-' + (i * 1.3).toFixed(1) + 's;';
+      return {
+        hcls: h ? 'hc on' : 'hc',
+        hstyle: h ? base + '--rx:' + ((0.5 - h.y) * 28).toFixed(1) + 'deg;--ry:' + ((h.x - 0.5) * 28).toFixed(1) + 'deg;--mx:' + Math.round(h.x * 100) + '%;--my:' + Math.round(h.y * 100) + '%;--s:1.06' : base,
+        move: (e) => {
+          try {
+            const r = e.currentTarget.getBoundingClientRect();
+            const x = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)), y = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height));
+            this.setState({ hc: { ...((this.state && this.state.hc) || {}), [id]: { x, y } } });
+          } catch (err) {}
+        },
+        leave: () => { const n = { ...((this.state && this.state.hc) || {}) }; delete n[id]; this.setState({ hc: n }); }
+      };
+    };
+    return {
+      heroImage: this.props.heroImage ?? '../assets/hero.webp',
+      gridCls: 'grid ' + hv,
+      fresh: pick.map(id => all.find(p => p.id === id)),
+      singles: all.filter(p => p.card).map((p, i) => ({ ...p, ...hc('s-' + p.id, i) })),
+      heroProps: [
+        { id: 'h-lob', pos: 'qb', r: 5, d: .25, img: B + '1cf148d453c220a513d1beb96b7d7b43', label: 'Legend of Blue Eyes White Dragon 25th Anniversary booster box, 2 450 MAD', cut: true },
+        { id: 'h-maj', pos: 'q1', r: -12, d: .4, img: B + 'ece800265378505cf99a63f1dca3146e', label: 'Majestic Star Dragon, 650 MAD' },
+        { id: 'h-bls', pos: 'q2', r: 10, d: .55, img: B + '2075d60d418eb578ae5a3b37d4cfdec6', label: 'Black Luster Soldier, 400 MAD' },
+        { id: 'h-beud', pos: 'q3', r: -8, d: .7, img: B + 'd5e4ec2f8fc557215f2c973d887f352b', label: 'Blue-Eyes Ultimate Dragon, 500 MAD' },
+        { id: 'h-bane', pos: 'q4', r: 12, d: .85, img: B + 'eebad67326d5f38421abd3192b481f32', label: 'Evil Hero Malicious Bane, 780 MAD' },
+        { id: 'h-mer', pos: 'q5', r: 14, d: 1, img: B + '0fed9e1d0f81eb50554d7de81b7a6f10', label: 'Magical Merchant, 1 400 MAD' }
+      ].map((h, i) => {
+        const c = hc(h.id, i);
+        return { ...h, ...c, aCls: 'hp deal ' + h.pos, r: h.r + 'deg', d: h.d + 's', bd: (i * 0.7) + 's', hcls: c.hcls + (h.cut ? ' cut mk-lob' : '') };
+      }),
+      reels: [
+        { img: B + '3288ad066eef3fa2a707a965011e3b7d', title: 'Exodia the Forbidden One, graded secret rare' },
+        { img: B + '77c409ce510f32ebb3f6ebcf270b37da', title: 'A pull at the desk, with Ponpoko watching' },
+        { img: B + 'cf7ce87f6634b493bd5104e31f1c6fdc', title: 'A card hidden in a “Sardines en chocolat” tin' },
+        { img: B + '4531c14b58af6f4eb9defa42c121e37a', title: 'The 10K followers giveaway' },
+        { img: B + '51782b0bd434e534d9cb502d89420139', title: 'A dragon pulled on the streets of Amsterdam' }
+      ],
+      reviews: [
+        { text: '“L’box wslatni f 2 iyam, mbakiya mzyan. Merci Ponpo!”', who: 'Sample buyer', img: B + 'bfd27411299fb05bfa8f89d95dc49adb', item: 'Booster box · Casablanca' },
+        { text: '“L’carta kima f tsswira bdebt. Ghadi n3awd nchri.”', who: 'Sample buyer', img: B + 'ece800265378505cf99a63f1dca3146e', item: 'Rare single · Tanger' }
+      ],
+      ri, prevDis: ri <= 0, nextDis: ri >= maxI,
+      prev: () => this.setState({ ri: Math.max(0, ri - 1) }),
+      next: () => this.setState({ ri: Math.min(maxI, ri + 1) }),
+      dots: [0, 1, 2].map(i => ({ cls: i === ri ? 'on' : '' })),
+      orderGeneral: () => this.copy('Hi Ponpo! I’d like to order: '),
+      feedback: () => this.copy('Hi Ponpo! Feedback on my order: '),
+      copied: !!s.copiedText,
+      copiedText: s.copiedText || ''
+    };
+  }
+}
+</script>
+</body>
+</html>

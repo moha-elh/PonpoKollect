@@ -1,0 +1,285 @@
+{
+  "source": "https://ponpokollect.ma — scraped November 2026. Prices in MAD (Moroccan dirham). 'was' = crossed-out old price shown on her site.",
+  "categories": [
+    {
+      "id": "boxes",
+      "label": "Booster boxes"
+    },
+    {
+      "id": "singles",
+      "label": "Rare singles"
+    },
+    {
+      "id": "decks",
+      "label": "Decks"
+    },
+    {
+      "id": "boosters",
+      "label": "Boosters"
+    },
+    {
+      "id": "accessories",
+      "label": "Accessories",
+      "empty": true
+    },
+    {
+      "id": "collector",
+      "label": "Collector boxes",
+      "empty": true
+    }
+  ],
+  "products": [
+    {
+      "id": "lob25",
+      "name": "Legend of Blue Eyes White Dragon “25th Anniversary” Booster Box",
+      "category": "boxes",
+      "price": 2450,
+      "was": 2760,
+      "image": "/assets/lob25.webp",
+      "featured": true,
+      "condition": "Factory sealed",
+      "rarity": "Sealed product",
+      "set": "Legend of Blue Eyes White Dragon · 25th Anniversary",
+      "language": "English",
+      "description": "Unlimited print reprint of Legend of Blue Eyes White Dragon stamped with the Yu-Gi-Oh! 25th Anniversary logo.",
+      "points": [
+        "24 booster packs per box",
+        "9 cards per booster",
+        "Handpicked abroad and customs cleared"
+      ],
+      "sourceUrl": "https://ponpokollect.ma/products/lob25th",
+      "sub": "Booster box · 24 packs"
+    },
+    {
+      "id": "ioc25",
+      "name": "Invasion of Chaos “25th Anniversary” Booster Box",
+      "category": "boxes",
+      "price": 1800,
+      "was": 2040,
+      "image": "/assets/ioc25.webp",
+      "condition": "Factory sealed",
+      "rarity": "Sealed product",
+      "set": "Invasion of Chaos · 25th Anniversary",
+      "language": "English",
+      "description": "Unlimited print reprint of Invasion of Chaos stamped with the Yu-Gi-Oh! 25th Anniversary logo.",
+      "points": [
+        "24 booster packs per box",
+        "9 cards per booster",
+        "Handpicked abroad and customs cleared"
+      ],
+      "sourceUrl": "https://ponpokollect.ma/products/invasion-of-chaos-25th-anniversary-copy",
+      "sub": "Booster box · 24 packs"
+    },
+    {
+      "id": "ps25",
+      "name": "Pharaoh’s Servant “25th Anniversary” Booster Box",
+      "category": "boxes",
+      "price": 1800,
+      "was": 2040,
+      "image": "/assets/ps25.webp",
+      "condition": "Factory sealed",
+      "rarity": "Sealed product",
+      "set": "Pharaoh’s Servant · 25th Anniversary",
+      "language": "English",
+      "description": "Unlimited print reprint of Pharaoh’s Servant stamped with the Yu-Gi-Oh! 25th Anniversary logo.",
+      "points": [
+        "24 booster packs per box",
+        "9 cards per booster",
+        "Handpicked abroad and customs cleared"
+      ],
+      "sourceUrl": "https://ponpokollect.ma/products/pharaohs-servant-25th-anniversary",
+      "sub": "Booster box · 24 packs"
+    },
+    {
+      "id": "srl25",
+      "name": "Spell Ruler “25th Anniversary” Booster Box",
+      "category": "boxes",
+      "price": 1800,
+      "was": 2040,
+      "image": "/assets/srl25.webp",
+      "condition": "Factory sealed",
+      "rarity": "Sealed product",
+      "set": "Spell Ruler · 25th Anniversary",
+      "language": "English",
+      "description": "Unlimited print reprint of Spell Ruler stamped with the Yu-Gi-Oh! 25th Anniversary logo.",
+      "points": [
+        "24 booster packs per box",
+        "9 cards per booster",
+        "Handpicked abroad and customs cleared"
+      ],
+      "sourceUrl": "https://ponpokollect.ma/products/srl25",
+      "sub": "Booster box · 24 packs"
+    },
+    {
+      "id": "shaddoll",
+      "name": "Shaddoll Ready “Core Deck”",
+      "category": "decks",
+      "price": 800,
+      "image": "/assets/shaddoll.webp",
+      "image2": "/assets/shaddoll_list.webp",
+      "condition": "Ask for photos",
+      "rarity": "Mixed",
+      "set": "Shaddoll core deck",
+      "language": "Not listed",
+      "description": "A bundle with the Shaddoll core. The core deck list is in the second photo.",
+      "points": [
+        "Core deck list shown in the second photo",
+        "Ready deck bundle"
+      ],
+      "sourceUrl": "https://ponpokollect.ma/products/shaddoll-core-deck",
+      "sub": "Ready deck bundle",
+      "blurb": "A ready deck bundle built around the Shaddoll core. The core deck list is in the second photo.",
+      "condNote": "Condition is not listed. Ask Ponpoko for photos of the cards before you order."
+    },
+    {
+      "id": "bewd",
+      "name": "Blue-Eyes White Destiny Structure Deck",
+      "category": "decks",
+      "price": 250,
+      "image": "/assets/bewd.webp",
+      "condition": "Factory sealed",
+      "rarity": "Sealed product",
+      "set": "Structure deck",
+      "language": "English",
+      "description": "Prepare for the next chapter of the Blue-Eyes White Dragon strategy with the Blue-Eyes White Destiny Structure Deck.",
+      "points": [
+        "1 structure deck",
+        "Ready to play out of the box",
+        "Factory sealed"
+      ],
+      "sourceUrl": "https://ponpokollect.ma/products/blue-eyes-white-destiny-structure-deck",
+      "sub": "Structure deck",
+      "blurb": "The next chapter of the Blue-Eyes White Dragon strategy, in one sealed structure deck.",
+      "condNote": "Factory sealed."
+    },
+    {
+      "id": "inf",
+      "name": "The Infinite Forbidden Booster Pack",
+      "category": "boosters",
+      "price": 85,
+      "image": "/assets/inf.webp",
+      "condition": "Sealed pack",
+      "rarity": "Sealed product",
+      "set": "The Infinite Forbidden",
+      "language": "English",
+      "description": "The Infinite Forbidden contains 100 new cards, including a brand-new World Premiere theme, and continues the 25th anniversary celebration.",
+      "points": [
+        "25 Quarter Century Secret Rares in the set",
+        "Includes 1 special card in the set",
+        "One sealed booster pack"
+      ],
+      "sourceUrl": "https://ponpokollect.ma/products/infinite-forbidden-booster",
+      "sub": "Booster pack",
+      "blurb": "100 new cards for strategies new and old, including a brand-new World Premiere theme.",
+      "condNote": "Sealed, never searched or weighed."
+    },
+    {
+      "id": "merchant",
+      "name": "Magical Merchant — Champion Pack 5 (CP05)",
+      "category": "singles",
+      "card": true,
+      "price": 1400,
+      "image": "/assets/merchant.webp",
+      "condition": "Not listed — ask for photos",
+      "rarity": "Super Rare",
+      "set": "Champion Pack 5 · Unlimited · 2008",
+      "language": "English",
+      "sourceUrl": "https://ponpokollect.ma/products/magical-merchant-cp05",
+      "sub": "Super Rare · English · Unlimited"
+    },
+    {
+      "id": "bane",
+      "name": "Evil Hero Malicious Bane (GLAS)",
+      "category": "singles",
+      "card": true,
+      "price": 780,
+      "image": "/assets/bane.webp",
+      "condition": "Not listed — ask for photos",
+      "rarity": "Ultimate Rare",
+      "set": "Gladiator’s Assault · Unlimited · 2007",
+      "language": "English",
+      "note": "Her site's title says Malicious Bane but the photo shows Malicious Edge — confirm with Ponpoko.",
+      "sourceUrl": "https://ponpokollect.ma/products/evil-hero-malicious-bane-utr",
+      "sub": "Ultimate Rare · English · Unlimited"
+    },
+    {
+      "id": "majestic",
+      "name": "Majestic Star Dragon (SOVR)",
+      "category": "singles",
+      "card": true,
+      "price": 650,
+      "image": "/assets/majestic.webp",
+      "condition": "Not listed — ask for photos",
+      "rarity": "Ghost Rare",
+      "set": "Stardust Overdrive · Unlimited",
+      "language": "English",
+      "sourceUrl": "https://ponpokollect.ma/products/majestic-star-dragon-ghost",
+      "sub": "Ghost Rare · English · Unlimited"
+    },
+    {
+      "id": "beud",
+      "name": "Blue-Eyes Ultimate Dragon — Retro Pack 1 (RP01)",
+      "category": "singles",
+      "card": true,
+      "price": 500,
+      "image": "/assets/beud.webp",
+      "condition": "Not listed — ask for photos",
+      "rarity": "Secret Rare",
+      "set": "Retro Pack 1 · Limited Edition · 2008",
+      "language": "French",
+      "sourceUrl": "https://ponpokollect.ma/products/blue-eyes-ultimate-dragon-rp01",
+      "sub": "Secret Rare · French · Limited Edition"
+    },
+    {
+      "id": "zaloog",
+      "name": "Don Zaloog — Pharaonic Guardian (PGD)",
+      "category": "singles",
+      "card": true,
+      "price": 450,
+      "image": "/assets/zaloog.webp",
+      "condition": "Not listed — ask for photos",
+      "rarity": "Not listed",
+      "set": "Pharaonic Guardian · 1st Edition",
+      "language": "Not listed",
+      "note": "Her product page is a copy of the Black Luster Soldier page; rarity and language unknown.",
+      "sourceUrl": "https://ponpokollect.ma/products/don-zaloog-pgd-1st",
+      "sub": "1st Edition"
+    },
+    {
+      "id": "bls",
+      "name": "Black Luster Soldier — Envoy of the Beginning (IOC-FR)",
+      "category": "singles",
+      "card": true,
+      "price": 400,
+      "image": "/assets/bls.webp",
+      "condition": "Not listed — ask for photos",
+      "rarity": "Ultra Rare",
+      "set": "Invasion of Chaos · Unlimited",
+      "language": "French",
+      "sourceUrl": "https://ponpokollect.ma/products/bls-ioc-unlimited",
+      "sub": "Ultra Rare · French · Unlimited"
+    }
+  ],
+  "instagramPosts": [
+    {
+      "image": "/assets/ig_exodia.webp",
+      "title": "Exodia the Forbidden One, graded secret rare"
+    },
+    {
+      "image": "/assets/ig_trap.webp",
+      "title": "A pull at the desk, with Ponpoko watching"
+    },
+    {
+      "image": "/assets/ig_sardines.webp",
+      "title": "A card hidden in a “Sardines en chocolat” tin"
+    },
+    {
+      "image": "/assets/ig_giveaway.webp",
+      "title": "The 10K followers giveaway"
+    },
+    {
+      "image": "/assets/ig_amsterdam.webp",
+      "title": "A dragon pulled on the streets of Amsterdam"
+    }
+  ]
+}

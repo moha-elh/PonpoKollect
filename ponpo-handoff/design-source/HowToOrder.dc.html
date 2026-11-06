@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ponpo Kollect — How to order</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&amp;family=Chivo:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E1714}a:hover{color:#A9471A}
+.head{display:flex;flex-direction:column;gap:16px;padding:40px 0;max-width:760px}
+.steps{display:grid;gap:0;grid-template-columns:minmax(0,1fr);margin:0;padding:0;list-style:none;border-top:1px solid #1E1714}
+.steps li{display:grid;gap:12px;padding:28px 0;border-bottom:1px solid #ECE7E3;min-width:0}
+.steps .n{font-family:'Instrument Sans',sans-serif;font-size:12px;color:#905484}
+.bubble{background:#F6F3F0;border-radius:16px 16px 4px 16px;padding:12px 16px;font-size:14px;margin:0;max-width:420px}
+.builder{display:grid;gap:32px;padding:72px 0;align-items:start}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-family:'Instrument Sans',sans-serif;font-size:12px;color:#6E625C}
+.select{appearance:none;width:100%;min-height:48px;border-radius:999px;border:1px solid #DDD5CF;background:#FFFFFF;color:#1E1714;padding:0 20px;font-size:16px}
+.preview{background:#F6F3F0;padding:24px;display:flex;flex-direction:column;gap:16px}
+.preview q{font-size:20px;line-height:1.4;quotes:none;overflow-wrap:anywhere}
+.faq{padding:0 0 96px;display:grid;gap:24px}
+.faq details{border-top:1px solid #ECE7E3;padding:8px 0}
+.faq details:last-child{border-bottom:1px solid #ECE7E3}
+.faq summary{cursor:pointer;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:48px;align-items:center}
+.faq summary::after{content:"+";font-family:'Instrument Sans',sans-serif;font-size:20px;color:#6E625C;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 12px;color:#6E625C;max-width:640px}
+@media (min-width:768px){
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;border-top:0}
+  .steps li{border-top:1px solid #1E1714;border-bottom:0;align-content:start}
+  .builder{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;padding:96px 0}
+  .faq{grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:64px}
+}
+</style>
+</helmet>
+<div class="page">
+
+<div class="announce">Pay on delivery · Delivered across Morocco in 2–3 days</div>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <nav class="left" aria-label="Main">
+      <a class="nl" href="Shop.dc.html">Shop all</a>
+      <a class="nl" href="Shop.dc.html">Singles</a>
+      <a class="nl" href="Shop.dc.html">Booster boxes</a>
+      <a class="nl" href="About.dc.html">About</a>
+      <a class="nl on" href="HowToOrder.dc.html">How to order</a>
+    </nav>
+    <a class="logo" href="Main.dc.html" aria-label="Ponpo Kollect home"><img src="../assets/logo.webp" alt="Ponpo Kollect"></a>
+    <div class="right"><a class="btn btn-ink btn-sm" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener">Order on Instagram</a></div>
+  </div>
+  <nav class="subnav" aria-label="Main (mobile)">
+    <a href="Main.dc.html">Home</a><a href="Shop.dc.html">Shop all</a><a href="Shop.dc.html">Singles</a><a href="Shop.dc.html">Booster boxes</a><a href="About.dc.html">About</a><a class="on" href="HowToOrder.dc.html">How to order</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="head">
+    <h1 class="h1 fade-in">How to order</h1>
+    <p class="lede fade-in" style="--d:.08s">One DM, a quick confirmation, and you pay in cash when the parcel reaches you. No account, no card.</p>
+  </section>
+
+  <ol class="steps reveal" aria-label="Three steps">
+    <li>
+      <span class="n">01</span>
+      <span class="h3">DM</span>
+      <span class="s14 muted">Tap Order on Instagram on any product. Ponpoko’s DMs open and your message is already copied. Paste it and send.</span>
+      <p class="bubble">Hi Ponpo! I’d like to order: Spell Ruler “25th Anniversary” Booster Box (1 800 MAD).</p>
+    </li>
+    <li>
+      <span class="n">02</span>
+      <span class="h3">Confirm</span>
+      <span class="s14 muted">Ponpoko checks stock and confirms the price and your delivery address: city, district, house or another place you agree on.</span>
+    </li>
+    <li>
+      <span class="n">03</span>
+      <span class="h3">Shipped across Morocco</span>
+      <span class="s14 muted">Your order ships with Cathedis, in 2 to 3 days to priority destinations. You pay on delivery.</span>
+    </li>
+  </ol>
+
+  <section class="builder" aria-labelledby="b-h">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <h2 class="h2" id="b-h">Write my message</h2>
+      <p class="lede">Pick a product and quantity. We copy the message and open Ponpoko’s DMs.</p>
+      <div class="field">
+        <label for="pick">Product</label>
+        <select id="pick" class="select" value="{{pick}}" onChange="{{onPick}}">
+          <sc-for list="{{options}}" as="o" hint-placeholder-count="13"><option value="{{o.value}}">{{o.label}}</option></sc-for>
+        </select>
+      </div>
+      <div class="field">
+        <label for="qty">Quantity</label>
+        <select id="qty" class="select" value="{{qtyStr}}" onChange="{{onQty}}">
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+        </select>
+      </div>
+    </div>
+    <div class="preview reveal">
+      <span class="tag" style="align-self:flex-start">Your message</span>
+      <q>{{message}}</q>
+      <span class="s12 muted">Total {{total}} · paid in cash on delivery. Delivery cost is confirmed in the DM.</span>
+      <a class="btn btn-ink" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{send}}" style="align-self:flex-start">Copy and open Instagram</a>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-h">
+    <h2 class="h2" id="faq-h">Questions</h2>
+    <div>
+      <details open><summary>How do I pay?</summary><p>Cash on delivery. You place the order, and pay when the product reaches the place you agreed on.</p></details>
+      <details><summary>How long does delivery take?</summary><p>Orders ship with Cathedis, which delivers within 2 to 3 days to priority destinations.</p></details>
+      <details><summary>Where does the stock come from?</summary><p>Ponpoko handpicks every product abroad. Everything has gone through customs clearance before it’s sold.</p></details>
+      <details><summary>Can you find a card that isn’t listed?</summary><p>Ask in the DMs. Ponpoko brings back different products whenever she travels.</p></details>
+      <details><summary>Returns?</summary><p>See the <a href="https://ponpokollect.ma/pages/return-policy" target="_blank" rel="noopener">return policy</a>.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:340px">
+        <span class="flogo"><img src="../assets/logo.webp" alt="Ponpo Kollect"></span>
+        <p class="s14" style="margin:0;color:#BEB2AB">Products from Ponpoko’s Vault. Pay on delivery, anywhere in Morocco.</p>
+      </div>
+      <div><h3>Shop</h3><ul><li><a href="Shop.dc.html">Booster boxes</a></li><li><a href="Shop.dc.html">Rare singles</a></li><li><a href="Shop.dc.html">Decks</a></li><li><a href="Shop.dc.html">Boosters</a></li></ul></div>
+      <div><h3>Help</h3><ul><li><a href="HowToOrder.dc.html">How to order</a></li><li><a href="https://ponpokollect.ma/pages/shipping-delivery" target="_blank" rel="noopener">Shipping &amp; delivery</a></li><li><a href="https://ponpokollect.ma/pages/return-policy" target="_blank" rel="noopener">Return policy</a></li><li><a href="https://ponpokollect.ma/pages/faq" target="_blank" rel="noopener">FAQ</a></li></ul></div>
+      <div><h3>Ponpo</h3><ul><li><a href="About.dc.html">About</a></li><li><a href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://ponpokollect.ma/pages/terms-and-conditions" target="_blank" rel="noopener">Terms</a></li><li><a href="https://ponpokollect.ma/pages/confidentiality" target="_blank" rel="noopener">Privacy</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Ponpo Kollect</span><span>Ponpo Kollect is an independent shop and is not affiliated with, endorsed or sponsored by Konami or Yu-Gi-Oh!.</span></div>
+  </div>
+</footer>
+
+<sc-if value="{{copied}}" hint-placeholder-val="{{ false }}">
+  <div class="toast" role="status"><b>Message copied, paste it in the DM</b><q>{{copiedText}}</q></div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2200}}'>
+class Component extends DCLogic {
+  copy(text) {
+    try { if (navigator.clipboard) navigator.clipboard.writeText(text); } catch (e) {}
+    this.setState({ copiedText: text });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copiedText: null }), 5000);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+  renderVals() {
+    const s = this.state || {};
+    const items = [
+      ['Legend of Blue Eyes White Dragon “25th Anniversary” Booster Box', 2450],
+      ['Invasion of Chaos “25th Anniversary” Booster Box', 1800],
+      ['Pharaoh’s Servant “25th Anniversary” Booster Box', 1800],
+      ['Spell Ruler “25th Anniversary” Booster Box', 1800],
+      ['Shaddoll Ready “Core Deck”', 800],
+      ['Blue-Eyes White Destiny Structure Deck', 250],
+      ['The Infinite Forbidden Booster Pack', 85],
+      ['Magical Merchant — Champion Pack 5 (CP05)', 1400],
+      ['Evil Hero Malicious Bane (GLAS)', 780],
+      ['Majestic Star Dragon (SOVR)', 650],
+      ['Blue-Eyes Ultimate Dragon — Retro Pack 1 (RP01)', 500],
+      ['Don Zaloog — Pharaonic Guardian (PGD)', 450],
+      ['Black Luster Soldier — Envoy of the Beginning (IOC-FR)', 400]
+    ];
+    const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' MAD';
+    const pick = s.pick != null ? s.pick : '0';
+    const qty = s.qty || 1;
+    const it = items[Number(pick)] || items[0];
+    const total = fmt(it[1] * qty);
+    const message = 'Hi Ponpo! I’d like to order: ' + (qty > 1 ? qty + ' × ' : '') + it[0] + ' (' + total + ').';
+    return {
+      options: items.map((x, i) => ({ value: String(i), label: x[0] + ' — ' + fmt(x[1]) })),
+      pick, qtyStr: String(qty), message, total,
+      onPick: (e) => this.setState({ pick: e.target.value }),
+      onQty: (e) => this.setState({ qty: Number(e.target.value) || 1 }),
+      send: () => this.copy(message),
+      copied: !!s.copiedText, copiedText: s.copiedText || ''
+    };
+  }
+}
+</script>
+</body>
+</html>

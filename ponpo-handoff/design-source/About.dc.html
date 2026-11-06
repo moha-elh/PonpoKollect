@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ponpo Kollect — Who’s the raccoon?</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&amp;family=Chivo:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E1714}a:hover{color:#A9471A}
+.hero{background:#F6F3F0;overflow:hidden}
+.hero-in{display:grid;gap:32px;padding:40px 0 56px;align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:20px}
+.bigname{font-size:48px;line-height:1;letter-spacing:-0.03em;font-weight:400;margin:0}
+.hero-art{position:relative;max-width:520px;width:100%;margin:0 auto}
+.hero-art .arch{aspect-ratio:4/5;border-radius:999px 999px 24px 24px;overflow:hidden;background:#FEC604}
+.hero-art .arch img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hero-art .stk{position:absolute;left:-6%;bottom:-4%;width:38%;filter:drop-shadow(0 12px 18px rgba(30,23,20,.25));animation:bob 4.5s ease-in-out infinite}
+.hero-art .bst{position:absolute;right:-4%;top:8%}
+@keyframes bob{50%{transform:translateY(-10px) rotate(-3deg)}}
+.lines{display:flex;flex-wrap:wrap;gap:8px}
+.statement{padding:72px 0;display:grid;gap:24px}
+.statement p{font-size:24px;line-height:1.35;letter-spacing:-0.01em;margin:0;max-width:30em}
+.statement p em{font-style:normal;background:linear-gradient(transparent 60%,#FEC604 60%)}
+.collage{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.shot{position:relative;display:block;overflow:hidden;border-radius:16px;text-decoration:none;color:#1E1714;background:#F6F3F0}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.shot:hover img{transform:scale(1.05)}
+.shot .cap{position:absolute;left:10px;right:10px;bottom:10px;background:#FFFFFF;border-radius:10px;padding:8px 12px;font-size:12px}
+.shot{aspect-ratio:3/4}
+.shot[style*="span 2"]{aspect-ratio:16/9}
+.steps{display:grid;gap:32px;grid-template-columns:minmax(0,1fr);margin:0;padding:0;list-style:none}
+.steps li{display:flex;gap:20px;align-items:flex-start}
+.steps li div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.steps .n{font-family:'Instrument Sans',sans-serif;font-size:12px;color:#905484}
+.nums{background:#21191A;color:#F3EEE9;padding:64px 0}
+.nums-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 16px}
+.nums-grid div{display:flex;flex-direction:column;gap:4px;padding-top:16px;border-top:1px solid rgba(243,238,233,.2)}
+.nums-grid b{font-size:48px;font-weight:400;letter-spacing:-0.03em;line-height:1}
+.nums-grid span{font-family:'Instrument Sans',sans-serif;font-size:12px;color:#BEB2AB}
+.posts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 16px;margin:0;padding:0;list-style:none}
+.posts li{display:flex;flex-direction:column;gap:12px;min-width:0}
+.cta{position:relative;background:#FEC604;border-radius:24px;padding:40px 24px;display:grid;gap:20px;overflow:hidden;margin-bottom:96px}
+.cta img{width:160px;justify-self:center;animation:bob 4.5s ease-in-out infinite}
+.sec{padding:72px 0}
+@media (min-width:768px){
+  .bigname{font-size:64px}
+  .collage{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:220px}
+  .collage .shot{height:100%;aspect-ratio:auto}
+  .collage .shot.tall{grid-row:span 2}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .steps li{flex-direction:column}
+  .nums-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .posts{grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 32px}
+  .cta{grid-template-columns:auto minmax(0,1fr) auto;align-items:center;padding:40px 48px}
+  .cta img{width:180px}
+  .sec,.statement{padding:96px 0}
+}
+@media (min-width:1024px){
+  .hero-in{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:80px;padding:72px 0 96px}
+}
+</style>
+</helmet>
+<div class="page">
+
+<div class="announce">Pay on delivery · Delivered across Morocco in 2–3 days</div>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <nav class="left" aria-label="Main">
+      <a class="nl" href="Shop.dc.html">Shop all</a>
+      <a class="nl" href="Shop.dc.html">Singles</a>
+      <a class="nl" href="Shop.dc.html">Booster boxes</a>
+      <a class="nl on" href="About.dc.html">About</a>
+      <a class="nl" href="HowToOrder.dc.html">How to order</a>
+    </nav>
+    <a class="logo" href="Main.dc.html" aria-label="Ponpo Kollect home"><img src="../assets/logo.webp" alt="Ponpo Kollect"></a>
+    <div class="right"><a class="btn btn-ink btn-sm" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener">Order on Instagram</a></div>
+  </div>
+  <nav class="subnav" aria-label="Main (mobile)">
+    <a href="Main.dc.html">Home</a><a href="Shop.dc.html">Shop all</a><a href="Shop.dc.html">Singles</a><a href="Shop.dc.html">Booster boxes</a><a class="on" href="About.dc.html">About</a><a href="HowToOrder.dc.html">How to order</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <span class="tag plum fade-in" style="align-self:flex-start">Who’s the raccoon?</span>
+        <h1 class="bigname fade-in" style="--d:.08s">Meet Ponpoko.</h1>
+        <p class="lede fade-in" style="--d:.16s">A Moroccan Yu-Gi-Oh! enthusiast who shares her passion for the game and the anime, as a raccoon. She runs @ponpokollect, a verified Instagram with 13.1K followers, and fills this shop from her own travels.</p>
+        <div class="lines fade-in" style="--d:.24s"><span class="tag">Collecting</span><span class="tag">Snacking</span><span class="tag">Maghrebia</span><span class="tag">Verified creator</span></div>
+        <div class="fade-in" style="--d:.32s;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-ink" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener">Follow @ponpokollect</a>
+          <a class="btn btn-line" href="Shop.dc.html">Shop the vault</a>
+        </div>
+      </div>
+      <div class="hero-art fade-in" style="--d:.1s">
+        <div class="arch"><img src="../assets/ponpoko-pfp.webp" alt="Ponpoko’s raccoon avatar: orange hair, goggles, raccoon ears and a fur collar"></div>
+        <img class="stk" src="../assets/ponpoko-sticker.webp" alt="Ponpoko sticker holding a heart">
+        <span class="burst bst" style="--bc:#F08448"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap statement reveal">
+    <span class="tag" style="justify-self:start">Ponpoko’s Vault</span>
+    <p>Not a wholesale distributor. Every product was <em>handpicked by Ponpoko abroad</em> and went through customs clearance, in the hope of bringing Yu-Gi-Oh! a little closer to the community.</p>
+  </section>
+
+  <section class="wrap" aria-labelledby="feed-h">
+    <div class="shead"><h2 class="h2" id="feed-h">From the feed</h2><a class="ulink" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener">See all on Instagram</a></div>
+    <div class="collage reveal">
+      <a class="shot tall" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener"><img src="../assets/ig_amsterdam.webp" alt="Ponpoko holding a dragon card in Amsterdam"><span class="cap">A pull in Amsterdam</span></a>
+      <a class="shot" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener"><img src="../assets/ig_exodia.webp" alt="A graded Exodia the Forbidden One"><span class="cap">Graded Exodia</span></a>
+      <a class="shot" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener"><img src="../assets/ig_sardines.webp" alt="A card inside a Sardines en chocolat tin"><span class="cap">Snack meets card</span></a>
+      <a class="shot tall" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener"><img src="../assets/ig_trap.webp" alt="Hands opening a card with the raccoon persona below"><span class="cap">Desk pulls</span></a>
+      <a class="shot" style="grid-column:span 2" href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener"><img src="../assets/ig_giveaway.webp" alt="Giveaway prizes for 10K followers" style="object-position:50% 40%"><span class="cap">The 10K followers giveaway</span></a>
+    </div>
+  </section>
+
+  <section class="wrap sec" aria-labelledby="how-h">
+    <div class="shead"><h2 class="h2" id="how-h">How the vault gets filled</h2></div>
+    <ol class="steps reveal">
+      <li><span class="burst" style="--bc:#E7C9DF"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M215.52,197.26a8,8,0,0,1-1.86,8.39l-24,24A8,8,0,0,1,184,232a7.09,7.09,0,0,1-.79,0,8,8,0,0,1-5.87-3.52l-44.07-66.12L112,183.59V208a8,8,0,0,1-2.34,5.65s-14,14.06-15.88,15.88A7.91,7.91,0,0,1,91,231.41a8,8,0,0,1-10.41-4.35l-.06-.15-14.7-36.76L29,175.42a8,8,0,0,1-2.69-13.08l16-16A8,8,0,0,1,48,144H72.4l21.27-21.27L27.56,78.65a8,8,0,0,1-1.22-12.32l24-24a8,8,0,0,1,8.39-1.86l85.94,31.25L176.2,40.19a28,28,0,0,1,39.6,39.6l-31.53,31.53Z"/></svg></span><div><span class="n">01</span><span class="h3">She travels</span><span class="s14 muted">Whenever Ponpoko travels, she brings back different products for the shop.</span></div></li>
+      <li><span class="burst" style="--bc:#FEC604"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm-34.32,69.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></svg></span><div><span class="n">02</span><span class="h3">Customs cleared</span><span class="s14 muted">Everything goes through customs clearance before it’s listed.</span></div></li>
+      <li><span class="burst" style="--bc:#F08448"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Z"/></svg></span><div><span class="n">03</span><span class="h3">You ask for it</span><span class="s14 muted">Hunting something? Ask in the DMs and it might be in her next suitcase.</span></div></li>
+    </ol>
+  </section>
+
+  <section class="nums" aria-label="In numbers">
+    <div class="wrap nums-grid reveal">
+      <div><b>13.1K</b><span>Instagram followers</span></div>
+      <div><b>10K</b><span>Followers giveaway thrown</span></div>
+      <div><b>13</b><span>Products in the vault</span></div>
+      <div><b>2–3</b><span>Days to deliver, pay on arrival</span></div>
+    </div>
+  </section>
+
+  <section class="wrap sec" aria-labelledby="posts-h">
+    <div class="shead"><h2 class="h2" id="posts-h">What she posts</h2></div>
+    <ul class="posts reveal">
+      <li><span class="burst sm" style="--bc:#FEC604"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></span><span class="h3">Pull videos</span><span class="s14 muted">Packs and boxes opened on camera.</span></li>
+      <li><span class="burst sm" style="--bc:#E7C9DF"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M240,56V200a8,8,0,0,1-8,8H160a24,24,0,0,0-24,23.94,7.9,7.9,0,0,1-5.12,7.55A8,8,0,0,1,120,232a24,24,0,0,0-24-24H24a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H88a32,32,0,0,1,32,32v87.73a8.17,8.17,0,0,0,7.47,8.25,8,8,0,0,0,8.53-8V80a32,32,0,0,1,32-32h64A8,8,0,0,1,240,56Z"/></svg></span><span class="h3">Binder tours</span><span class="s14 muted">Page-by-page walks through the collection.</span></li>
+      <li><span class="burst sm" style="--bc:#F08448"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M224,120a40,40,0,0,1-40-40,8,8,0,0,0-8-8,40,40,0,0,1-40-40,8,8,0,0,0-8-8A104,104,0,1,0,232,128,8,8,0,0,0,224,120ZM75.51,99.51a12,12,0,1,1,0,17A12,12,0,0,1,75.51,99.51Zm25,73a12,12,0,1,1,0-17A12,12,0,0,1,100.49,172.49Zm23-40a12,12,0,1,1,17,0A12,12,0,0,1,123.51,132.49Zm41,48a12,12,0,1,1,0-17A12,12,0,0,1,164.49,180.49Z"/></svg></span><span class="h3">Snack reviews</span><span class="s14 muted">Collecting &amp; Snacking, as the bio says.</span></li>
+      <li><span class="burst sm" style="--bc:#F6F3F0"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M247.44,173.75a.68.68,0,0,0,0-.14L231.05,89.44c0-.06,0-.12,0-.18A60.08,60.08,0,0,0,172,40H83.89a59.88,59.88,0,0,0-59,49.52L8.58,173.61a.68.68,0,0,0,0,.14,36,36,0,0,0,60.9,31.71l.35-.37L109.52,160h37l39.71,45.09c.11.13.23.25.35.37A36.08,36.08,0,0,0,212,216a36,36,0,0,0,35.43-42.25ZM104,112H96v8a8,8,0,0,1-16,0v-8H72a8,8,0,0,1,0-16h8V88a8,8,0,0,1,16,0v8h8a8,8,0,0,1,0,16Zm40-8a8,8,0,0,1,8-8h24a8,8,0,0,1,0,16H152A8,8,0,0,1,144,104Zm84.37,87.47a19.84,19.84,0,0,1-12.9,8.23A20.09,20.09,0,0,1,198,194.31L167.8,160H172a60,60,0,0,0,51-28.38l8.74,45A19.82,19.82,0,0,1,228.37,191.47Z"/></svg></span><span class="h3">Gaming</span><span class="s14 muted">Duels and whatever else is on screen.</span></li>
+      <li><span class="burst sm" style="--bc:#FEC604"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg></span><span class="h3">Anime</span><span class="s14 muted">Where the love for the cards started.</span></li>
+      <li><span class="burst sm" style="--bc:#E7C9DF"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M200,64V192a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V136H104v56a16,16,0,0,1-16,16H72a16,16,0,0,1-16-16V64A16,16,0,0,1,72,48H88a16,16,0,0,1,16,16v56h48V64a16,16,0,0,1,16-16h16A16,16,0,0,1,200,64ZM36,72H32A16,16,0,0,0,16,88v32H8.27A8.18,8.18,0,0,0,0,127.47,8,8,0,0,0,8,136h8v32a16,16,0,0,0,16,16h4a4,4,0,0,0,4-4V76A4,4,0,0,0,36,72Zm220,55.47a8.18,8.18,0,0,0-8.25-7.47H240V88a16,16,0,0,0-16-16h-4a4,4,0,0,0-4,4V180a4,4,0,0,0,4,4h4a16,16,0,0,0,16-16V136h8A8,8,0,0,0,256,127.47Z"/></svg></span><span class="h3">Gym</span><span class="s14 muted">Training between rips.</span></li>
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <div class="cta reveal">
+      <img src="../assets/ponpoko-sticker.webp" alt="Ponpoko sticker holding a heart">
+      <div style="display:flex;flex-direction:column;gap:8px"><h2 class="h2">Hunting a card?</h2><p class="lede" style="color:#3B2A22">Tell Ponpoko what you’re looking for. It might be in her next suitcase.</p></div>
+      <a class="btn btn-ink" href="https://ig.me/m/ponpokollect" target="_blank" rel="noopener" onClick="{{hello}}">Message Ponpoko</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:340px">
+        <span class="flogo"><img src="../assets/logo.webp" alt="Ponpo Kollect"></span>
+        <p class="s14" style="margin:0;color:#BEB2AB">Products from Ponpoko’s Vault. Pay on delivery, anywhere in Morocco.</p>
+      </div>
+      <div><h3>Shop</h3><ul><li><a href="Shop.dc.html">Booster boxes</a></li><li><a href="Shop.dc.html">Rare singles</a></li><li><a href="Shop.dc.html">Decks</a></li><li><a href="Shop.dc.html">Boosters</a></li></ul></div>
+      <div><h3>Help</h3><ul><li><a href="HowToOrder.dc.html">How to order</a></li><li><a href="https://ponpokollect.ma/pages/shipping-delivery" target="_blank" rel="noopener">Shipping &amp; delivery</a></li><li><a href="https://ponpokollect.ma/pages/return-policy" target="_blank" rel="noopener">Return policy</a></li><li><a href="https://ponpokollect.ma/pages/faq" target="_blank" rel="noopener">FAQ</a></li></ul></div>
+      <div><h3>Ponpo</h3><ul><li><a href="About.dc.html">About</a></li><li><a href="https://www.instagram.com/ponpokollect/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://ponpokollect.ma/pages/terms-and-conditions" target="_blank" rel="noopener">Terms</a></li><li><a href="https://ponpokollect.ma/pages/confidentiality" target="_blank" rel="noopener">Privacy</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Ponpo Kollect</span><span>Ponpo Kollect is an independent shop and is not affiliated with, endorsed or sponsored by Konami or Yu-Gi-Oh!.</span></div>
+  </div>
+</footer>
+
+<sc-if value="{{copied}}" hint-placeholder-val="{{ false }}">
+  <div class="toast" role="status"><b>Message copied, paste it in the DM</b><q>{{copiedText}}</q></div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  copy(text) {
+    try { if (navigator.clipboard) navigator.clipboard.writeText(text); } catch (e) {}
+    this.setState({ copiedText: text });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copiedText: null }), 5000);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+  renderVals() {
+    const s = this.state || {};
+    return { hello: () => this.copy('Hi Ponpo! I’m looking for: '), copied: !!s.copiedText, copiedText: s.copiedText || '' };
+  }
+}
+</script>
+</body>
+</html>
