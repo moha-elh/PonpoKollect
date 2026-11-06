@@ -259,6 +259,6 @@ button,select,input{font-family:inherit}
 @keyframes hcdrift{0%,100%{transform:rotateX(5deg) rotateY(-7deg)}50%{transform:rotateX(-4deg) rotateY(8deg)}}
 @keyframes hclight{0%,100%{--mx:20%;--my:20%}50%{--mx:80%;--my:75%}}
 @keyframes hcspin{to{--ang:360deg}}
-.bob{display:block;animation:bob 5.5s ease-in-out infinite;animation-delay:var(--bd,0s)}
+.bob{display:block;animation:bob 8s ease-in-out infinite;animation-delay:var(--bd,0s)}
 @keyframes bob{50%{translate:0 -10px}}
 @media (prefers-reduced-motion:reduce){.hc,.hc .rot,.hc .pat,.bob{animation:none !important}}

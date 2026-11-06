@@ -14,7 +14,7 @@ const heroProps = [
   { id: "lob25", pos: "q0", r: 5, d: 0.25, cut: true },
   { id: "majestic", pos: "q1", r: -12, d: 0.4 },
   { id: "bls", pos: "q2", r: 10, d: 0.55 },
-  { id: "beud", pos: "q3", r: -8, d: 0.7 },
+  { id: "beud", pos: "q3", r: 22, d: 0.7 },
 ];
 const fresh = ["lob25", "majestic", "shaddoll", "ioc25", "bane", "bewd", "ps25", "inf"].map(byId);
 const singles = products.filter((p) => p.card);
@@ -117,7 +117,7 @@ export default function Home() {
         <div className="fb reveal">
           <a className="fb-card real" href="https://www.instagram.com/stories/highlights/17881132455395042/" target="_blank" rel="noopener" style={{ textDecoration: "none" }}>
             <span className="tag" style={{ alignSelf: "flex-start", background: "#F08448" }}>Shared in his story</span>
-            <span className="s20" style={{ color: "#F3EEE9" }}>ElGrandeToto ordered from Ponpo Kollect and posted it to his Instagram story.</span>
+            <span className="s20" style={{ color: "#F3EEE9" }}>“I’m about to cry welah”</span>
             <span className="who"><img className="av" src="/assets/toto-pfp.webp" alt="" /><span style={{ display: "flex", flexDirection: "column" }}><span className="s14 med">ElGrandeToto</span><span className="mono s12 muted">See the story highlight</span></span></span>
           </a>
           {reviews.map((r) => (
