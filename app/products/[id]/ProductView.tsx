@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { type Product, catLabel, fmt, pct, orderMsg, pageCopy, POLICY } from "@/lib/products";
-import { DmLink } from "@/components/ui";
+import { DmLink, Icon } from "@/components/ui";
 
 const tabs = [{ id: "details", label: "Details" }, { id: "condition", label: "Condition" }, { id: "shipping", label: "Shipping" }];
 
@@ -55,7 +55,6 @@ export default function ProductView({ p }: { p: Product }) {
                 </div>
               );
             })}
-            <span className="zhint" aria-hidden="true">{zoom ? "Click to zoom out" : "Click to zoom"}</span>
           </button>
         </div>
 
@@ -84,12 +83,12 @@ export default function ProductView({ p }: { p: Product }) {
             <DmLink className="btn btn-ink buybtn" msg={orderMsg(p, qty)}><span>Order on Instagram</span><span className="bt" aria-live="polite">{fmt(p.price * qty)}</span></DmLink>
           </div>
           <p className="s12 muted" style={{ margin: "-8px 0 0" }}>
-            {qty > 1 ? `${qty} × ${fmt(p.price)} · paid in cash on delivery` : "Paid in cash on delivery · your order message is copied for the DM"}
+            Total: {qty} × {fmt(p.price)} = <b className="tot">{fmt(p.price * qty)}</b>
           </p>
           <ul className="assure">
-            <li><b>Pay on delivery</b>Cash when it arrives</li>
-            <li><b>2–3 days</b>Shipped with Cathedis</li>
-            <li><b>Customs cleared</b>Handpicked abroad</li>
+            <li><span className="ic" style={{ background: "#FEC604" }}><Icon name="money" /></span><span><b>Pay on delivery</b>Cash when it arrives</span></li>
+            <li><span className="ic" style={{ background: "#F08448" }}><Icon name="truck" /></span><span><b>2–3 days</b>Shipped with Cathedis</span></li>
+            <li><span className="ic" style={{ background: "#E7C9DF" }}><Icon name="shield" /></span><span><b>Customs cleared</b>Handpicked abroad</span></li>
           </ul>
         </div>
       </section>
