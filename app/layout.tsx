@@ -7,7 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://ponpokollect.ma"),
   title: { default: "Ponpo Kollect | Rare Yu-Gi-Oh! cards and sealed boxes in Morocco", template: "%s | Ponpo Kollect" },
-  description: "Rare Yu-Gi-Oh! singles and sealed booster boxes, handpicked abroad by Ponpoko. Pay on delivery, delivered across Morocco in 2–3 days.",
+  description: "Rare Yu-Gi-Oh! singles and sealed booster boxes, handpicked abroad by Ponpoko. Pay on delivery, delivered across Morocco in 1–3 days.",
   openGraph: { siteName: "Ponpo Kollect", images: ["/assets/hero.webp"] },
   icons: { icon: "/assets/logo.webp" },
 };

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { products, fmt, orderMsg } from "@/lib/products";
+import { products, fmt, orderMsg, FREE } from "@/lib/products";
 import { DmLink } from "@/components/ui";
 
 /** Product picker: a listbox with thumbnails, plus a large preview of the hovered/focused product. */
@@ -95,7 +95,7 @@ export default function Builder() {
             <span><span className="s14 clamp2" title={p.name}>{p.name}</span><span className="price">{fmt(p.price * qty)}</span></span>
           </div>
           <p className="msg me big">{message}</p>
-          <span className="s12 b-note">Paid in cash on delivery. Delivery cost is confirmed in the DM.</span>
+          <span className="s12 b-note">{p.price * qty >= FREE ? "Free delivery on this order. " : `Delivery 25–45 MAD by region, free over ${fmt(FREE)}. `}Paid in cash on delivery.</span>
           <DmLink className="btn btn-yel" style={{ alignSelf: "flex-start" }} msg={message}>Copy and open Instagram</DmLink>
         </div>
       </div>

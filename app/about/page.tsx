@@ -88,7 +88,7 @@ export default function About() {
           <div><b>13.1K</b><span>Instagram followers</span></div>
           <div><b>10K</b><span>Followers giveaway thrown</span></div>
           <div><b>{products.length}</b><span>Products in the vault</span></div>
-          <div><b>2–3</b><span>Days to deliver, pay on arrival</span></div>
+          <div><b>1–3</b><span>Days to deliver, pay on arrival</span></div>
         </div>
       </section>
 

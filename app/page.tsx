@@ -82,7 +82,7 @@ export default function Home() {
       <section className="why" aria-label="Why order from Ponpo">
         <div className="wrap why-grid reveal">
           <div className="why-item"><Burst icon="money" color="#FEC604" /><div><span className="h3">Pay on delivery</span><span className="s14 muted">Cash when the parcel reaches you. Nothing to pay up front, no card needed.</span></div></div>
-          <div className="why-item"><Burst icon="truck" color="#F08448" /><div><span className="h3">2–3 day delivery</span><span className="s14 muted">Shipped with Cathedis to the city, district or address you agree on.</span></div></div>
+          <div className="why-item"><Burst icon="truck" color="#F08448" /><div><span className="h3">1–3 day delivery</span><span className="s14 muted">Shipped with Cathedis to the place you agree on. Free on orders over 1 500 MAD.</span></div></div>
           <div className="why-item"><Burst icon="airplane" color="#E7C9DF" /><div><span className="h3">Handpicked abroad</span><span className="s14 muted">Not a wholesaler. Ponpoko brings every product back from her own trips.</span></div></div>
           <div className="why-item"><Burst icon="shield" color="#FFFFFF" /><div><span className="h3">Customs cleared</span><span className="s14 muted">Every product has gone through customs clearance before it’s sold.</span></div></div>
         </div>

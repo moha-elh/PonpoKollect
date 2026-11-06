@@ -7,14 +7,14 @@ import type { IconName } from "@/components/icons";
 import Builder from "./Builder";
 import ChatDemo from "./ChatDemo";
 
-export const metadata: Metadata = { title: "How to order", description: "One DM, a quick confirmation, and you pay in cash when the parcel reaches you. Delivered across Morocco in 2–3 days." };
+export const metadata: Metadata = { title: "How to order", description: "One DM, a quick confirmation, and you pay in cash when the parcel reaches you. Delivered across Morocco in 1–3 days." };
 
 const d = (s: string) => ({ "--d": s }) as CSSProperties;
 
 const steps: [IconName, string, string, string][] = [
   ["chat", "#FEC604", "Send a DM", "Tap Order on Instagram on any product. Ponpoko’s DMs open with your message already copied. Paste it and send."],
   ["shield", "#E7C9DF", "Confirm", "Ponpoko checks stock and confirms the price, the delivery cost and where to deliver: a city, district, house or another place you agree on."],
-  ["truck", "#F08448", "Pay at the door", "Your order ships with Cathedis and arrives in 2 to 3 days to priority destinations. You pay in cash when it reaches you."],
+  ["truck", "#F08448", "Pay at the door", "Your order ships with Cathedis and usually arrives in 1 to 3 days, free over 1 500 MAD. You pay in cash when it reaches you."],
 ];
 
 export default function HowToOrder() {

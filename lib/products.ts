@@ -11,6 +11,8 @@ export type Product = {
 export const IG = "https://www.instagram.com/ponpokollect/";
 export const DM = "https://ig.me/m/ponpokollect";
 export const POLICY = "https://ponpokollect.ma/pages/";
+/** Orders at or above this total (MAD) ship free. */
+export const FREE = 1500;
 
 export const categories = data.categories as { id: string; label: string; empty?: boolean }[];
 export const products = data.products as Product[];

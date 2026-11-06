@@ -84,7 +84,7 @@ export default function ProductView({ p }: { p: Product }) {
           </div>
           <ul className="assure">
             <li><span className="ic" style={{ background: "#FEC604" }}><Icon name="money" /></span><span><b>Pay on delivery</b>Cash when it arrives</span></li>
-            <li><span className="ic" style={{ background: "#F08448" }}><Icon name="truck" /></span><span><b>2–3 days</b>Shipped with Cathedis</span></li>
+            <li><span className="ic" style={{ background: "#F08448" }}><Icon name="truck" /></span><span><b>1–3 day delivery</b>Free over 1 500 MAD</span></li>
             <li><span className="ic" style={{ background: "#E7C9DF" }}><Icon name="shield" /></span><span><b>Customs cleared</b>Handpicked abroad</span></li>
           </ul>
         </div>
@@ -105,10 +105,10 @@ export default function ProductView({ p }: { p: Product }) {
           )}
           {tab === "shipping" && (
             <div className="panel" role="tabpanel">
-              <p>After you confirm your order, it ships with Cathedis to the address you agree on: city, district, house or another location. Delivery takes 2 to 3 days to priority destinations.</p>
+              <p>After you confirm your order, it ships with Cathedis to the address you agree on: city, district, house or another location. Delivery usually takes 1 to 3 days.</p>
               <ul>
                 <li>Pay in cash when the parcel reaches you.</li>
-                <li>Delivery cost is confirmed in the DM before shipping.</li>
+                <li>Delivery is free on orders above 1 500 MAD. Otherwise it costs 25 to 45 MAD depending on your region, confirmed in the DM.</li>
                 <li>Returns follow the <a href={POLICY + "return-policy"} target="_blank" rel="noopener">return policy</a>.</li>
               </ul>
             </div>

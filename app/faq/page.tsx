@@ -5,7 +5,7 @@ import css from "@/styles/faq";
 import { POLICY } from "@/lib/products";
 import { DmLink } from "@/components/ui";
 
-export const metadata: Metadata = { title: "FAQ", description: "Ordering, payment, delivery and returns at Ponpo Kollect: pay in cash on delivery, shipped across Morocco in 2–3 days." };
+export const metadata: Metadata = { title: "FAQ", description: "Ordering, payment, delivery and returns at Ponpo Kollect: pay in cash on delivery, shipped across Morocco in 1–3 days, free over 1 500 MAD." };
 
 const ext = { target: "_blank", rel: "noopener" };
 

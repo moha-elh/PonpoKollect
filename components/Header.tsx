@@ -16,7 +16,7 @@ export default function Header() {
   const on = (href: string) => (href === path ? " on" : "");
   return (
     <>
-      <div className="announce">Pay on delivery · Delivered across Morocco in 2–3 days</div>
+      <div className="announce">Pay on delivery · Free delivery over 1 500 MAD · 1–3 days across Morocco</div>
       <header className="hdr">
         <div className="wrap hdr-in">
           <nav className="left" aria-label="Main">
