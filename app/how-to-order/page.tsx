@@ -5,6 +5,7 @@ import css from "@/styles/how";
 import { Burst, DmLink } from "@/components/ui";
 import type { IconName } from "@/components/icons";
 import Builder from "./Builder";
+import ChatDemo from "./ChatDemo";
 
 export const metadata: Metadata = { title: "How to order", description: "One DM, a quick confirmation, and you pay in cash when the parcel reaches you. Delivered across Morocco in 2–3 days." };
 
@@ -33,16 +34,7 @@ export default function HowToOrder() {
             </div>
           </div>
 
-          <figure className="chat fade-in" style={d(".2s")}>
-            <figcaption className="chat-top">
-              <img src="/assets/ponpoko-pfp.webp" alt="" />
-              <span><b>ponpokollect</b><span className="s12 muted">Example conversation</span></span>
-            </figcaption>
-            <p className="msg me">Hi Ponpo! I’d like to order: Spell Ruler “25th Anniversary” Booster Box (1 800 MAD).</p>
-            <p className="msg her">Available! Which city, and where should I send it?</p>
-            <p className="msg me">Casablanca, Maarif. Near the tram stop works.</p>
-            <p className="msg her">Perfect. It ships with Cathedis, you pay when it arrives.</p>
-          </figure>
+          <ChatDemo />
         </div>
       </section>
 
