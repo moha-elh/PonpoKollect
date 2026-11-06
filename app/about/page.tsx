@@ -67,10 +67,10 @@ export default function About() {
       </section>
 
       <section className="wrap sec" aria-labelledby="how-h">
-        <div className="shead"><h2 className="h2" id="how-h">How the vault gets filled</h2></div>
+        <div className="shead" style={{ justifyContent: "center" }}><h2 className="h2" id="how-h">How the vault gets filled</h2></div>
         <ol className="steps reveal">
-          {steps.map(([icon, color, title, body], i) => (
-            <li key={title}><Burst icon={icon} color={color} /><div><span className="n">0{i + 1}</span><span className="h3">{title}</span><span className="s14 muted">{body}</span></div></li>
+          {steps.map(([icon, color, title, body]) => (
+            <li key={title}><Burst icon={icon} color={color} /><div><span className="h3">{title}</span><span className="s14 muted">{body}</span></div></li>
           ))}
         </ol>
       </section>
