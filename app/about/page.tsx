@@ -22,14 +22,6 @@ const steps: [IconName, string, string, string][] = [
   ["shield", "#FEC604", "Customs cleared", "Everything goes through customs clearance before it’s listed."],
   ["chat", "#F08448", "You ask for it", "Hunting something? Ask in the DMs and it might be in her next suitcase."],
 ];
-const posts: [IconName, string, string, string][] = [
-  ["play", "#FEC604", "Pull videos", "Packs and boxes opened on camera."],
-  ["book", "#E7C9DF", "Binder tours", "Page-by-page walks through the collection."],
-  ["cookie", "#F08448", "Snack reviews", "Collecting & Snacking, as the bio says."],
-  ["gamepad", "#F6F3F0", "Gaming", "Duels and whatever else is on screen."],
-  ["star", "#FEC604", "Anime", "Where the love for the cards started."],
-  ["barbell", "#E7C9DF", "Gym", "Training between rips."],
-];
 
 export default function About() {
   return (
@@ -90,15 +82,6 @@ export default function About() {
           <div><b>{products.length}</b><span>Products in the vault</span></div>
           <div><b>1–3</b><span>Days to deliver, pay on arrival</span></div>
         </div>
-      </section>
-
-      <section className="wrap sec" aria-labelledby="posts-h">
-        <div className="shead"><h2 className="h2" id="posts-h">What she posts</h2></div>
-        <ul className="posts reveal">
-          {posts.map(([icon, color, title, body]) => (
-            <li key={title}><Burst icon={icon} color={color} sm /><span className="h3">{title}</span><span className="s14 muted">{body}</span></li>
-          ))}
-        </ul>
       </section>
 
       <section className="wrap">
