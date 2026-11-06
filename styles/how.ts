@@ -5,32 +5,20 @@ export default `
 .hw-copy{display:flex;flex-direction:column;gap:20px}
 .hw-copy .lede{color:#3B2A22}
 
-.chat{margin:0;background:#FFFFFF;border-radius:24px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 24px 48px rgba(30,23,20,.14);max-width:440px;width:100%;justify-self:center;rotate:1.5deg;transition:rotate .5s cubic-bezier(.2,.8,.2,1)}
+.chat{margin:0;background:#FFFFFF;border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:10px;box-shadow:0 24px 48px rgba(30,23,20,.14);max-width:440px;width:100%;justify-self:center;rotate:1.5deg;transition:rotate .5s cubic-bezier(.2,.8,.2,1);animation:chatin .7s .2s ease both,float 6s 1s ease-in-out infinite}
 .chat:hover{rotate:0deg}
-.chat-top{display:flex;align-items:center;gap:12px;padding:0 4px 12px;border-bottom:1px solid #ECE7E3}
-.chat-top .av{position:relative;flex:none}
-.chat-top img{display:block;width:40px;height:40px;border-radius:50%;object-fit:cover;background:#FEC604}
-.chat-top .dot{position:absolute;right:0;bottom:0;width:11px;height:11px;border-radius:50%;background:#3BB55E;box-shadow:0 0 0 2px #FFFFFF}
-.chat-top > span:nth-child(2){display:flex;flex-direction:column;font-size:14px;flex:1;min-width:0}
+@keyframes chatin{from{opacity:0;transform:translateY(16px)}}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.chat-top{display:flex;align-items:center;gap:12px;padding-bottom:12px;margin-bottom:4px;border-bottom:1px solid #ECE7E3}
+.chat-top img{width:40px;height:40px;border-radius:50%;object-fit:cover;background:#FEC604}
+.chat-top > span{display:flex;flex-direction:column;font-size:14px}
 .chat-top b{font-weight:500}
-.chat-top .st{color:#6E625C;transition:color .2s}
-.chat-top .st.on{color:#905484}
-.chat-top .ex{flex:none;align-self:flex-start;padding:2px 8px;border-radius:999px;background:#F6F3F0}
-.msgs{display:flex;flex-direction:column;justify-content:flex-end;gap:8px;height:300px;overflow:hidden;padding:0 4px;transition:opacity .5s;mask-image:linear-gradient(to bottom,transparent 0,#000 24px)}
-.msgs.out{opacity:0}
-.msg{margin:0;font-size:14px;line-height:1.45;padding:10px 14px;max-width:85%;overflow-wrap:anywhere;flex:none}
-.msg.me{align-self:flex-end;background:#F08448;color:#1E1714;border-radius:18px 18px 4px 18px}
-.msg.her{align-self:flex-start;background:#F6F3F0;border-radius:18px 18px 18px 4px}
-.msgs .msg{animation:pop .4s cubic-bezier(.2,.9,.25,1.15) both}
-.msgs .msg.me{transform-origin:100% 100%}
-.msgs .msg.her{transform-origin:0 100%}
-.seen{align-self:flex-end;margin-top:-4px;animation:pop .3s ease both}
-.dots{display:flex;gap:4px;padding:14px 16px}
-.dots i{width:7px;height:7px;border-radius:50%;background:#6E625C;animation:blink 1.1s ease-in-out infinite}
-.dots i:nth-child(2){animation-delay:.15s}
-.dots i:nth-child(3){animation-delay:.3s}
-@keyframes blink{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
-.chat-in{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 6px 0 16px;border-radius:999px;border:1px solid #ECE7E3}
+.msg{margin:0;font-size:14px;line-height:1.45;padding:10px 14px;max-width:85%;overflow-wrap:anywhere}
+.msg.me{align-self:flex-end;background:#F08448;color:#1E1714;border-radius:18px 18px 4px 18px;transform-origin:100% 100%}
+.msg.her{align-self:flex-start;background:#F6F3F0;border-radius:18px 18px 18px 4px;transform-origin:0 100%}
+.chat .msg{animation:pop .4s cubic-bezier(.2,.9,.25,1.15) both}
+.chat .msg.wait{visibility:hidden;animation:none}
+.chat-in{display:flex;align-items:center;gap:8px;min-height:44px;margin-top:6px;padding:0 6px 0 16px;border-radius:999px;border:1px solid #ECE7E3}
 .chat-in .txt{flex:1;min-width:0;font-size:14px;color:#A39791;white-space:nowrap;overflow:hidden}
 .chat-in .txt.on{color:#1E1714}
 .caret{display:inline-block;width:1.5px;height:1em;margin-left:1px;vertical-align:-2px;background:#1E1714;animation:caret 1s steps(1) infinite}
@@ -99,5 +87,5 @@ export default `
   .builder-in{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:80px;padding-block:96px;align-items:center}
   .hw-steps{padding-block:96px}
 }
-@media (prefers-reduced-motion:reduce){.msgs .msg,.seen,.dots i,.caret{animation:none}.chat{transition:none}}
+@media (prefers-reduced-motion:reduce){.chat,.chat .msg,.caret{animation:none}.chat{transition:none}}
 `;
