@@ -84,8 +84,8 @@ export default function About() {
         </div>
       </section>
 
-      <section className="wrap">
-        <div className="cta reveal">
+      <section className="cta-band">
+        <div className="wrap cta reveal">
           <img src="/assets/ponpoko-sticker.webp" alt="Ponpoko sticker holding a heart" />
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}><h2 className="h2">Hunting a card?</h2><p className="lede" style={{ color: "#3B2A22" }}>Tell Ponpoko what you’re looking for. It might be in her next suitcase.</p></div>
           <DmLink className="btn btn-ink" msg="Hi Ponpo! I’m looking for: ">Message Ponpoko</DmLink>
