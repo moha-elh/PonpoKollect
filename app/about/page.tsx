@@ -12,10 +12,10 @@ const d = (s: string) => ({ "--d": s }) as CSSProperties;
 const ext = { target: "_blank", rel: "noopener" };
 
 const shots = [
-  { img: "/assets/ig_amsterdam.webp", alt: "Ponpoko holding a dragon card in Amsterdam", cap: "A pull in Amsterdam", cls: "shot tall" },
-  { img: "/assets/ig_exodia.webp", alt: "A graded Exodia the Forbidden One", cap: "Graded Exodia", cls: "shot" },
-  { img: "/assets/ig_sardines.webp", alt: "A card inside a Sardines en chocolat tin", cap: "Snack meets card", cls: "shot" },
-  { img: "/assets/ig_trap.webp", alt: "Hands opening a card with the raccoon persona below", cap: "Desk pulls", cls: "shot tall" },
+  { img: "/assets/ig_amsterdam.webp", alt: "Ponpoko holding a dragon card in Amsterdam", cls: "shot tall" },
+  { img: "/assets/ig_exodia.webp", alt: "A graded Exodia the Forbidden One", cls: "shot" },
+  { img: "/assets/ig_sardines.webp", alt: "A card inside a Sardines en chocolat tin", cls: "shot" },
+  { img: "/assets/ig_trap.webp", alt: "Hands opening a card with the raccoon persona below", cls: "shot tall" },
 ];
 const steps: [IconName, string, string, string][] = [
   ["airplane", "#E7C9DF", "She travels", "Whenever Ponpoko travels, she brings back different products for the shop."],
@@ -65,10 +65,10 @@ export default function About() {
         <div className="shead"><h2 className="h2" id="feed-h">From the feed</h2><a className="ulink" href={IG} {...ext}>See all on Instagram</a></div>
         <div className="collage reveal">
           {shots.map((s) => (
-            <a key={s.img} className={s.cls} href={IG} {...ext}><img src={s.img} alt={s.alt} loading="lazy" /><span className="cap">{s.cap}</span></a>
+            <a key={s.img} className={s.cls} href={IG} {...ext}><img src={s.img} alt={s.alt} loading="lazy" /></a>
           ))}
           <a className="shot" style={{ gridColumn: "span 2" }} href={IG} {...ext}>
-            <img src="/assets/ig_giveaway.webp" alt="Giveaway prizes for 10K followers" style={{ objectPosition: "50% 40%" }} loading="lazy" /><span className="cap">The 10K followers giveaway</span>
+            <img src="/assets/ig_giveaway.webp" alt="Giveaway prizes for 10K followers" style={{ objectPosition: "50% 40%" }} loading="lazy" />
           </a>
         </div>
       </section>
