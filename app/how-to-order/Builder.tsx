@@ -10,28 +10,35 @@ export default function Builder() {
   const message = orderMsg(p, qty);
 
   return (
-    <section className="builder" aria-labelledby="b-h">
-      <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-        <h2 className="h2" id="b-h">Write my message</h2>
-        <p className="lede">Pick a product and quantity. We copy the message and open Ponpoko’s DMs.</p>
-        <div className="field">
-          <label htmlFor="pick">Product</label>
-          <select id="pick" className="select" value={i} onChange={(e) => setI(Number(e.target.value))}>
-            {products.map((o, n) => <option key={o.id} value={n}>{o.name} — {fmt(o.price)}</option>)}
-          </select>
+    <section className="builder" id="builder" aria-labelledby="b-h">
+      <div className="wrap builder-in">
+        <div className="b-form">
+          <h2 className="h2" id="b-h">Write my message</h2>
+          <p className="lede">Pick a product and a quantity. We copy the message for you and open Ponpoko’s DMs.</p>
+          <div className="field">
+            <label htmlFor="pick">Product</label>
+            <select id="pick" className="select" value={i} onChange={(e) => setI(Number(e.target.value))}>
+              {products.map((o, n) => <option key={o.id} value={n}>{o.name} · {fmt(o.price)}</option>)}
+            </select>
+          </div>
+          <div className="field">
+            <span className="lbl" id="qty-l">Quantity</span>
+            <div className="qty" role="group" aria-labelledby="qty-l">
+              <button type="button" aria-label="One less" disabled={qty <= 1} onClick={() => setQty(qty - 1)}>−</button>
+              <output aria-live="polite">{qty}</output>
+              <button type="button" aria-label="One more" disabled={qty >= 5} onClick={() => setQty(qty + 1)}>+</button>
+            </div>
+          </div>
         </div>
-        <div className="field">
-          <label htmlFor="qty">Quantity</label>
-          <select id="qty" className="select" value={qty} onChange={(e) => setQty(Number(e.target.value))}>
-            {[1, 2, 3, 4, 5].map((n) => <option key={n} value={n}>{n}</option>)}
-          </select>
+        <div className="b-out reveal">
+          <div className="b-prod">
+            <img src={p.image} alt="" />
+            <span><span className="s14 clamp2" title={p.name}>{p.name}</span><span className="price">{fmt(p.price * qty)}</span></span>
+          </div>
+          <p className="msg me big">{message}</p>
+          <span className="s12 b-note">Paid in cash on delivery. Delivery cost is confirmed in the DM.</span>
+          <DmLink className="btn btn-yel" style={{ alignSelf: "flex-start" }} msg={message}>Copy and open Instagram</DmLink>
         </div>
-      </div>
-      <div className="preview reveal">
-        <span className="tag" style={{ alignSelf: "flex-start" }}>Your message</span>
-        <q>{message}</q>
-        <span className="s12 muted">Total {fmt(p.price * qty)} · paid in cash on delivery. Delivery cost is confirmed in the DM.</span>
-        <DmLink className="btn btn-ink" style={{ alignSelf: "flex-start" }} msg={message}>Copy and open Instagram</DmLink>
       </div>
     </section>
   );
