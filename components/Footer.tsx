@@ -28,7 +28,7 @@ export default function Footer() {
             <li><Link href="/about/">About</Link></li>
             <li><a href={IG} {...ext}>Instagram</a></li>
             <li><a href={POLICY + "terms-and-conditions"} {...ext}>Terms</a></li>
-            <li><a href={POLICY + "confidentiality"} {...ext}>Privacy</a></li>
+            <li><Link href="/privacy/">Privacy</Link></li>
           </ul></div>
         </div>
         <div className="legal">
