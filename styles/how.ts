@@ -66,8 +66,10 @@ export default `
 
 @media (min-width:768px){
   .tl{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;position:relative}
-  .tl::before{content:"";position:absolute;left:72px;right:calc(33.333% - 21px);top:36px;border-top:2px dashed #DDD5CF}
-  .tl li{grid-template-columns:minmax(0,1fr);row-gap:10px;position:relative}
+  .tl::before{content:"";position:absolute;left:calc((100% - 64px)/6);right:calc((100% - 64px)/6);top:36px;border-top:2px dashed #DDD5CF}
+  .tl li{grid-template-columns:minmax(0,1fr);row-gap:10px;position:relative;justify-items:center;text-align:center}
+  .tl li .s14{max-width:32ch}
+  #steps-h{text-align:center}
   .tl .burst{grid-row:auto;background:#FFFFFF;box-shadow:0 0 0 12px #FFFFFF;border-radius:50%}
   .hw-end{flex-direction:row;justify-content:space-between;align-items:flex-end}
 }
