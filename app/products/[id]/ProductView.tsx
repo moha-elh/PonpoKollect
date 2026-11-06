@@ -82,9 +82,6 @@ export default function ProductView({ p }: { p: Product }) {
             </div>
             <DmLink className="btn btn-ink buybtn" msg={orderMsg(p, qty)}><span>Order on Instagram</span><span className="bt" aria-live="polite">{fmt(p.price * qty)}</span></DmLink>
           </div>
-          <p className="s12 muted" style={{ margin: "-8px 0 0" }}>
-            Total: {qty} × {fmt(p.price)} = <b className="tot">{fmt(p.price * qty)}</b>
-          </p>
           <ul className="assure">
             <li><span className="ic" style={{ background: "#FEC604" }}><Icon name="money" /></span><span><b>Pay on delivery</b>Cash when it arrives</span></li>
             <li><span className="ic" style={{ background: "#F08448" }}><Icon name="truck" /></span><span><b>2–3 days</b>Shipped with Cathedis</span></li>
