@@ -18,11 +18,12 @@ export default `
 .chat .msg:nth-of-type(2){animation-delay:1.1s}
 .chat .msg:nth-of-type(3){animation-delay:1.7s}
 .chat .msg:nth-of-type(4){animation-delay:2.3s}
+@keyframes peek{from{opacity:0;transform:scale(.94)}}
 @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.96)}}
 
 .hw-steps{display:flex;flex-direction:column;gap:32px;padding-block:72px}
 .tl{list-style:none;margin:0;padding:0;display:grid;gap:40px}
-.tl li{display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:20px;row-gap:6px;align-items:start;min-width:0}
+.tl li{display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:20px;row-gap:6px;align-items:start;align-content:start;min-width:0}
 .tl .burst{grid-row:span 3}
 .tl .num{font-family:'Chivo',sans-serif;font-size:14px;color:#905484}
 
@@ -32,9 +33,19 @@ export default `
 .b-form .lede{color:#BEB2AB}
 .field{display:flex;flex-direction:column;gap:8px}
 .field label,.field .lbl{font-size:14px;color:#BEB2AB}
-.builder .select{appearance:none;width:100%;min-height:48px;border-radius:999px;border:1px solid #4A3D38;padding:0 44px 0 20px;font:inherit;font-size:16px;color:#F3EEE9;cursor:pointer;background:#2B2224 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23F3EEE9' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 20px center/10px;transition:border-color .2s}
-.builder .select:hover,.builder .select:focus-visible{border-color:#F3EEE9}
-.builder .select option{background:#2B2224;color:#F3EEE9}
+.pick{position:relative}
+.pick-btn{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;padding:6px 44px 6px 6px;border-radius:999px;border:1px solid #4A3D38;font:inherit;font-size:16px;color:#F3EEE9;text-align:left;cursor:pointer;background:#2B2224 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23F3EEE9' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 20px center/10px;transition:border-color .2s}
+.pick-btn:hover,.pick-btn:focus-visible,.pick-btn[aria-expanded="true"]{border-color:#F3EEE9}
+.pick img{width:44px;height:44px;flex:none;object-fit:contain;background:#F3EEE9;border-radius:50%;padding:4px}
+.pick-name{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pick-pop{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:20}
+.pick-pop ul{list-style:none;margin:0;padding:6px;max-height:340px;overflow-y:auto;background:#2B2224;border:1px solid #4A3D38;border-radius:20px;box-shadow:0 24px 48px rgba(0,0,0,.35);scrollbar-width:thin;scrollbar-color:#4A3D38 transparent}
+.pick-pop li{display:flex;align-items:center;gap:12px;padding:6px 12px 6px 6px;border-radius:14px;cursor:pointer;font-size:14px}
+.pick-pop li img{width:40px;height:40px;border-radius:10px}
+.pick-pop li.on{background:#3A2F31}
+.pick-pop li[aria-selected="true"] .pick-name{color:#FEC604}
+.pick-price{flex:none;font-family:'Chivo',sans-serif;font-size:12px;color:#BEB2AB}
+.pick-peek{display:none}
 .qty{display:inline-flex;align-items:center;align-self:flex-start;border:1px solid #4A3D38;border-radius:999px;min-height:48px}
 .qty button{width:48px;height:48px;border:0;background:none;color:#F3EEE9;font-size:20px;cursor:pointer;border-radius:999px}
 .qty button:hover:not(:disabled){background:#2B2224}
@@ -61,6 +72,9 @@ export default `
   .hw-end{flex-direction:row;justify-content:space-between;align-items:flex-end}
 }
 @media (min-width:1024px){
+  .pick-peek{display:flex;flex-direction:column;gap:8px;position:absolute;left:calc(100% + 16px);top:0;width:240px;padding:16px;background:#F3EEE9;color:#1E1714;border-radius:20px;box-shadow:0 24px 48px rgba(0,0,0,.35)}
+  .pick-peek img{width:100%;height:200px;object-fit:contain;border-radius:0;background:none;padding:0;animation:peek .25s ease both}
+  .pick-peek .price{color:#A9471A}
   .hw-hero-in{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;padding-block:88px 96px;min-height:560px}
   .builder-in{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:80px;padding-block:96px;align-items:center}
   .hw-steps{padding-block:96px}
