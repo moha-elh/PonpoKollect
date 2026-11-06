@@ -19,11 +19,13 @@ const groups: { id: string; title: string; items: [string, ReactNode][] }[] = [
   { id: "payment", title: "Payment", items: [
     ["How do I pay?", "Cash on delivery. You pay when the product reaches the place you agreed on."],
     ["Do I pay anything up front?", "No. Nothing is paid before the parcel reaches you."],
-    ["How much is delivery?", "The delivery cost depends on where you are. Ponpoko confirms it in the DM along with the price."],
+    ["How much is delivery?", "Between 25 and 45 MAD, depending on your region. Ponpoko confirms the exact cost in the DM along with the price."],
+    ["Is delivery ever free?", "Yes. Delivery is free on orders above 1 500 MAD."],
+    ["I want to order a large quantity. Is there a discount?", "Orders above 1 500 MAD ship for free. For anything bigger, ask Ponpoko in the DMs."],
   ] },
   { id: "delivery", title: "Delivery", items: [
     ["Who delivers my order?", "Orders ship with Cathedis."],
-    ["How long does delivery take?", "2 to 3 days to priority destinations."],
+    ["How long does delivery take?", "Usually 1 to 3 days with Cathedis, depending on where you are."],
     ["Where can you deliver?", "Across Morocco: to your city, district, house or another place you agree on with Ponpoko."],
   ] },
   { id: "products", title: "Products", items: [
