@@ -49,9 +49,16 @@ export default function About() {
       </section>
 
       <section className="wrap statement reveal">
-        <span className="tag" style={{ justifySelf: "start" }}>Ponpoko’s Vault</span>
-        <p>Not a wholesale distributor. <br/>
-        Every product was <em>handpicked by Ponpoko abroad</em> and went through customs clearance, in the hope of bringing Yu-Gi-Oh! a little closer to the community.</p>
+        <div className="st-copy">
+          <span className="tag" style={{ alignSelf: "flex-start" }}>Ponpoko’s Vault</span>
+          <p>Not a wholesale distributor. <br/>
+          Every product was <em>handpicked by Ponpoko abroad</em> and went through customs clearance, in the hope of bringing Yu-Gi-Oh! a little closer to the community.</p>
+        </div>
+        <div className="fan" aria-hidden="true">
+          <span className="foil fl"><img src="/assets/bane.webp" alt="" /></span>
+          <span className="foil fr"><img src="/assets/merchant.webp" alt="" /></span>
+          <span className="foil fc"><img src="/assets/zaloog.webp" alt="" /></span>
+        </div>
       </section>
 
       <section className="wrap" aria-labelledby="feed-h">
