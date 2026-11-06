@@ -38,13 +38,14 @@ export default function About() {
       <section className="hero">
         <div className="wrap hero-in">
           <div className="hero-copy">
-            <span className="tag plum fade-in" style={{ alignSelf: "flex-start" }}>Who’s the raccoon?</span>
+            <span className="tag plum fade-in" style={{ alignSelf: "flex-start", position: "relative" }}>Who’s the raccoon?<Burst icon="star" color="#F08448" className="bst-d" /></span>
             <h1 className="bigname fade-in" style={d(".08s")}>Meet Ponpoko.</h1>
             <p className="lede fade-in" style={d(".16s")}>A Moroccan Yu-Gi-Oh! enthusiast who shares her passion for the game and the anime, as a raccoon. She runs @ponpokollect, a verified Instagram with 13.1K followers, and fills this shop from her own travels.</p>
             <div className="lines fade-in" style={d(".24s")}><span className="tag">Collecting</span><span className="tag">Snacking</span><span className="tag">Maghrebia</span><span className="tag">Verified creator</span></div>
-            <div className="fade-in" style={{ ...d(".32s"), display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <div className="fade-in" style={{ ...d(".32s"), display: "flex", gap: 12, flexWrap: "wrap", alignSelf: "flex-start", position: "relative" }}>
               <a className="btn btn-ink" href={IG} {...ext}>Follow @ponpokollect</a>
               <Link className="btn btn-line" href="/shop/">Shop the vault</Link>
+              <img className="stk-d" src="/assets/ponpoko-sticker.webp" alt="" />
             </div>
           </div>
           <div className="hero-art fade-in" style={d(".1s")}>
@@ -57,7 +58,8 @@ export default function About() {
 
       <section className="wrap statement reveal">
         <span className="tag" style={{ justifySelf: "start" }}>Ponpoko’s Vault</span>
-        <p>Not a wholesale distributor. Every product was <em>handpicked by Ponpoko abroad</em> and went through customs clearance, in the hope of bringing Yu-Gi-Oh! a little closer to the community.</p>
+        <p>Not a wholesale distributor. <br/>
+        Every product was <em>handpicked by Ponpoko abroad</em> and went through customs clearance, in the hope of bringing Yu-Gi-Oh! a little closer to the community.</p>
       </section>
 
       <section className="wrap" aria-labelledby="feed-h">
